@@ -10,24 +10,24 @@ import {
 } from "@/components/ui/accordion"
 
 const exercieses: StrengthExercise[] =  [
-    {name: "Bench press", sets: "3x5", weight: "80kg"},
-    {name: "Back squat", sets: "3x5", weight: "95kg"},
-    {name: "Weighted pullups", sets: "3x5", weight: "15kg"}
+    {name: "Bench press", sets: "3x5", weight: 80},
+    {name: "Back squat", sets: "3x5", weight: 95},
+    {name: "Weighted pullups", sets: "3x5", weight: 15}
 ];
 
-export interface ProgramnViewProps {}
-export default function ProgramView({}: ProgramnViewProps) {
+export interface ProgramViewProps {}
+export default function ProgramView({}: ProgramViewProps) {
 	return (
       <Accordion type="multiple">
         <AccordionItem value="item-1">
           <AccordionTrigger>Week 1</AccordionTrigger>
           <AccordionContent>
             <div className="grid grid-cols-7 gap-4">
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.7} />
               <CardioDayCard minutes={30} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.7} />
               <CardioDayCard minutes={40} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.7} />
               <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
@@ -37,11 +37,11 @@ export default function ProgramView({}: ProgramnViewProps) {
           <AccordionTrigger>Week 2</AccordionTrigger>
           <AccordionContent>
              <div className="grid grid-cols-7 gap-4">
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.8} />
               <CardioDayCard minutes={30} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.8} />
               <CardioDayCard minutes={40} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.8} />
               <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>         
@@ -51,11 +51,11 @@ export default function ProgramView({}: ProgramnViewProps) {
           <AccordionTrigger>Week 3</AccordionTrigger>
             <AccordionContent>
               <div className="grid grid-cols-7 gap-4">
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.9} />
               <CardioDayCard minutes={30} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.9} />
               <CardioDayCard minutes={40} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.9} />
               <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
@@ -79,11 +79,11 @@ export default function ProgramView({}: ProgramnViewProps) {
           <AccordionTrigger>Week 5</AccordionTrigger>
             <AccordionContent>
               <div className="grid grid-cols-7 gap-4">
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.75} />
               <CardioDayCard minutes={30} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.75} />
               <CardioDayCard minutes={40} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.75} />
               <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
@@ -93,11 +93,11 @@ export default function ProgramView({}: ProgramnViewProps) {
           <AccordionTrigger>Week 6</AccordionTrigger>
             <AccordionContent>
               <div className="grid grid-cols-7 gap-4">
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.85} />
               <CardioDayCard minutes={30} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.85} />
               <CardioDayCard minutes={40} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.85} />
               <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
@@ -107,11 +107,11 @@ export default function ProgramView({}: ProgramnViewProps) {
           <AccordionTrigger>Week 7</AccordionTrigger>
             <AccordionContent>
               <div className="grid grid-cols-7 gap-4">
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.95} />
               <CardioDayCard minutes={30} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.95} />
               <CardioDayCard minutes={40} />
-              <StrengthDayCard exercises={exercieses} />
+              <StrengthDayCard exercises={exercieses} effort={0.95} />
               <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
