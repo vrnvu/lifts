@@ -17,22 +17,22 @@ function App() {
 
       <Separator className="mb-4"/>
 
-      <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 bg-muted/80 p-4 md:gap-8 md:p-10">
-        <Tabs defaultValue="plan" className="mb-4">
-          <TabsList>
-            <TabsTrigger value="plan">Plan</TabsTrigger>
-            <TabsTrigger value="program">Program</TabsTrigger>
-          </TabsList>
-          <TabsContent value="plan">
-            <UserConfigProvider>
-              <PlanView />
-            </UserConfigProvider>
-          </TabsContent>
-          <TabsContent value="program">
-            <ProgramView />
-          </TabsContent>
-        </Tabs>
-      </main>
+      <UserConfigProvider>
+        <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 bg-muted/80 p-4 md:gap-8 md:p-10">
+          <Tabs defaultValue="plan" className="mb-4">
+            <TabsList>
+              <TabsTrigger value="plan">Plan</TabsTrigger>
+              <TabsTrigger value="program">Program</TabsTrigger>
+            </TabsList>
+            <TabsContent value="plan">
+                <PlanView />
+            </TabsContent>
+            <TabsContent value="program">
+              <ProgramView />
+            </TabsContent>
+          </Tabs>
+        </main>
+      </UserConfigProvider>
     </div>
   )
 }
