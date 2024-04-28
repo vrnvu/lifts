@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import PlanView from './views/PlanView'
 import ProgramView from './views/ProgramView'
+import UserConfigProvider from './context/UserConfigContext'
 
 
 function App() {
@@ -23,7 +24,9 @@ function App() {
             <TabsTrigger value="program">Program</TabsTrigger>
           </TabsList>
           <TabsContent value="plan">
-            <PlanView />
+            <UserConfigProvider>
+              <PlanView />
+            </UserConfigProvider>
           </TabsContent>
           <TabsContent value="program">
             <ProgramView />

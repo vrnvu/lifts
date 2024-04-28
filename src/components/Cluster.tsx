@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/table"
 
 export default function Cluster() {
+
   return (
     <Card>
       <CardHeader>
@@ -39,13 +40,13 @@ export default function Cluster() {
               <TableCell className="font-semibold">Bench press</TableCell>
               <TableCell>
                 <Label htmlFor="ex-1" className="sr-only">
-                  Stock
+                  Current 1RM
                 </Label>
-                <Input id="ex-1" type="number" defaultValue="100" />
+                <Input id="ex-1" type="number" defaultValue="100"/>
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-1" className="sr-only">
-                  Stock
+                  Last 1RM
                 </Label>
                 <Input id="last-ex-1" type="number" defaultValue="100" />
               </TableCell>
@@ -55,13 +56,13 @@ export default function Cluster() {
               <TableCell className="font-semibold">Back squat</TableCell>
               <TableCell>
                 <Label htmlFor="ex-2" className="sr-only">
-                  Stock
+                  Current 1RM
                 </Label>
                 <Input id="ex-2" type="number" defaultValue="120" />
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-2" className="sr-only">
-                  Stock
+                  Last 1RM
                 </Label>
                 <Input id="last-ex-2" type="number" defaultValue="100" />
               </TableCell>
@@ -71,13 +72,13 @@ export default function Cluster() {
               <TableCell className="font-semibold">Weighted pullups</TableCell>
               <TableCell>
                 <Label htmlFor="ex-3" className="sr-only">
-                  Stock
+                  Current 1RM
                 </Label>
                 <Input id="ex-3" type="number" defaultValue="10" />
               </TableCell>
 	      <TableCell>
                 <Label htmlFor="last-ex-3" className="sr-only">
-                  Stock
+                  Last 1RM
                 </Label>
                 <Input id="last-ex-2" type="number" defaultValue="100" />
 	      </TableCell>
