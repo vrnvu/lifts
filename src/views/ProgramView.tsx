@@ -8,15 +8,22 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-
-const exercieses: StrengthExercise[] =  [
-    {name: "Bench press", sets: "3x5", weight: 80},
-    {name: "Back squat", sets: "3x5", weight: 95},
-    {name: "Weighted pullups", sets: "3x5", weight: 15}
-];
+import { UserConfigContext } from "@/context/UserConfigContext";
+import { useContext } from "react";
 
 export interface ProgramViewProps {}
 export default function ProgramView({}: ProgramViewProps) {
+  const userConfig = useContext(UserConfigContext);
+  if (userConfig == undefined) {
+    return;
+  }
+
+  const exercieses: StrengthExercise[] =  [
+      {name: "Bench press", sets: "3x5", weight: userConfig.benchPress},
+      {name: "Back squat", sets: "3x5", weight: userConfig.backSquat},
+      {name: "Weighted pullups", sets: "3x5", weight: userConfig.weightedPullups}
+  ];
+
 	return (
       <Accordion type="multiple">
         <AccordionItem value="item-1">

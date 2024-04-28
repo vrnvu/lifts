@@ -56,7 +56,7 @@ export default function Cluster({}: ClusterProps) {
                 <Label htmlFor="last-ex-1" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-1" type="number" min={0} defaultValue="0" />
+                <Input id="last-ex-1" type="number" min={0} defaultValue={userConfig.lastBenchPress} onChange={(e) => userConfig.setLastBenchPress(e.target.valueAsNumber)}/>
               </TableCell>
             </TableRow>
 
@@ -72,7 +72,7 @@ export default function Cluster({}: ClusterProps) {
                 <Label htmlFor="last-ex-2" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-2" type="number" min={0} defaultValue="0" />
+                <Input id="last-ex-2" type="number" min={0} defaultValue={userConfig.lastBackSquat} onChange={(e) => userConfig.setLastBackSquat(e.target.valueAsNumber)}/>
               </TableCell>
             </TableRow>
 
@@ -84,12 +84,12 @@ export default function Cluster({}: ClusterProps) {
                 </Label>
                 <Input id="ex-3" type="number" min={0} defaultValue={userConfig.weightedPullups} onChange={(e) => userConfig.setWeightedPullups(e.target.valueAsNumber)}/>
               </TableCell>
-	      <TableCell>
+              <TableCell>
                 <Label htmlFor="last-ex-3" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-2" type="number" min={0} defaultValue="0" />
-	      </TableCell>
+                <Input id="last-ex-2" type="number" min={0} defaultValue={userConfig.lastWeightedPullups} onChange={(e) => userConfig.setLastWeightedPullups(e.target.valueAsNumber)}/>
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
