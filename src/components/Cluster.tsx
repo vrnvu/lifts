@@ -15,8 +15,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { UserConfigContext } from "@/context/UserConfigContext";
 
-export default function Cluster() {
+import { useContext } from "react";
+
+export interface ClusterProps {}
+export default function Cluster({}: ClusterProps) {
+	const userConfig = useContext(UserConfigContext);
 
   return (
     <Card>
@@ -42,13 +47,13 @@ export default function Cluster() {
                 <Label htmlFor="ex-1" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-1" type="number" defaultValue="100"/>
+                <Input id="ex-1" type="number" defaultValue={userConfig?.benchPress} onChange={(e) => userConfig?.setBenchPress(e.target.valueAsNumber)}/>
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-1" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-1" type="number" defaultValue="100" />
+                <Input id="last-ex-1" type="number" defaultValue="0" />
               </TableCell>
             </TableRow>
 
@@ -58,13 +63,13 @@ export default function Cluster() {
                 <Label htmlFor="ex-2" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-2" type="number" defaultValue="120" />
+                <Input id="ex-2" type="number" defaultValue={userConfig?.backSquat} onChange={(e) => userConfig?.setBackSquat(e.target.valueAsNumber)}/>
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-2" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-2" type="number" defaultValue="100" />
+                <Input id="last-ex-2" type="number" defaultValue="0" />
               </TableCell>
             </TableRow>
 
@@ -74,13 +79,13 @@ export default function Cluster() {
                 <Label htmlFor="ex-3" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-3" type="number" defaultValue="10" />
+                <Input id="ex-3" type="number" defaultValue={userConfig?.weightedPullups} onChange={(e) => userConfig?.setWeightedPullups(e.target.valueAsNumber)}/>
               </TableCell>
 	      <TableCell>
                 <Label htmlFor="last-ex-3" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-2" type="number" defaultValue="100" />
+                <Input id="last-ex-2" type="number" defaultValue="0" />
 	      </TableCell>
             </TableRow>
           </TableBody>

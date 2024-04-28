@@ -4,20 +4,14 @@ export interface UserConfig {
   benchPress: number;
   backSquat: number;
   weightedPullups: number;
-  setBenchPress?: (v: number) => void;
-  setBackSquat?: (v: number) => void;
-  setWeightedPullups?: (v: number) => void;
+  setBenchPress: (v: number) => void;
+  setBackSquat: (v: number) => void;
+  setWeightedPullups: (v: number) => void;
 }
 
-const initialUserConfig: UserConfig = {
-  benchPress: 0,
-  backSquat: 0,
-  weightedPullups: 0,
-};
+export const UserConfigContext = createContext<UserConfig | undefined>(undefined);
 
-export const UserConfigContext = createContext<UserConfig>(initialUserConfig);
-
-export default function UserConfigProvider({ children }: { children: React.ReactNode }) {
+export function UserConfigProvider({ children }: { children: React.ReactNode }) {
   const [benchPress, setBenchPress] = useState<number>(0);
   const [backSquat, setBackSquat] = useState<number>(0);
   const [weightedPullups, setWeightedPullups] = useState<number>(0);

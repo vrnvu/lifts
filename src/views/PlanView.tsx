@@ -1,11 +1,14 @@
 import Cluster from "@/components/Cluster";
 import Component from "@/components/Component";
-import { UserConfigContext } from "@/context/UserConfigContext";
+import { UserConfig, UserConfigContext } from "@/context/UserConfigContext";
 import { useContext } from "react";
 
 export interface PlanViewProps {}
 export default function PlanView({}: PlanViewProps) {
-	const userConfig = useContext(UserConfigContext);
+	const userConfig: UserConfig | undefined = useContext(UserConfigContext);
+	if (userConfig == undefined) {
+		return;
+	}
 	const benchPress = userConfig.benchPress;
 	const backSquat = userConfig.backSquat;
 	const weightedPullups = userConfig.weightedPullups;
