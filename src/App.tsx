@@ -4,8 +4,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 
 import PlanView from './views/PlanView'
-import ProgramView from './views/ProgramView'
 import { UserConfigProvider } from './contexts/UserConfigContext'
+import ProgramOperatorView from './views/ProgramOperatorView'
+import Program531BView from './views/Program531BView'
 
 
 function App() {
@@ -22,18 +23,22 @@ function App() {
           <Tabs defaultValue="plan" className="mb-4">
             <TabsList>
               <TabsTrigger value="plan">Plan</TabsTrigger>
-              <TabsTrigger value="program">Program</TabsTrigger>
+              <TabsTrigger value="program-operator">Operator</TabsTrigger>
+              <TabsTrigger value="program-531b">5/3/1 Beginner</TabsTrigger>
             </TabsList>
             <TabsContent value="plan">
               <PlanView />
             </TabsContent>
-            <TabsContent value="program">
-              <ProgramView />
+            <TabsContent value="program-operator">
+              <ProgramOperatorView />
+            </TabsContent>
+            <TabsContent value="program-531b">
+              <Program531BView />
             </TabsContent>
           </Tabs>
         </main>
       </UserConfigProvider>
-    </div>
+    </div >
   )
 }
 
