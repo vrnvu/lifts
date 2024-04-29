@@ -22,9 +22,6 @@ import { useContext } from "react";
 export interface ClusterProps {}
 export default function Cluster({}: ClusterProps) {
 	const userConfig = useContext(UserConfigContext);
-  if (userConfig == undefined) {
-    return;
-  }
 
   return (
     <Card>

@@ -5,10 +5,8 @@ import { useContext } from "react";
 
 export interface PlanViewProps {}
 export default function PlanView({}: PlanViewProps) {
-	const userConfig: UserConfig | undefined = useContext(UserConfigContext);
-	if (userConfig == undefined) {
-		return;
-	}
+	const userConfig: UserConfig = useContext(UserConfigContext);
+
 	const benchPress = userConfig.benchPress;
 	const backSquat = userConfig.backSquat;
 	const weightedPullups = userConfig.weightedPullups;
