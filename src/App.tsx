@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-muted/80 px-4 md:px-6">
-        <h1 className="mb-4">Operator + Green building</h1>
+        <h1 className="mb-4">lifts</h1>
       </header>
 
       <Separator className="mb-4" />
