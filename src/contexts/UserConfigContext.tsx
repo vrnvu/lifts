@@ -4,7 +4,9 @@ import { createContext, useState } from "react";
 export enum ExerciseType {
   BENCH_PRESS,
   BACK_SQUAT,
-  WEIGHTED_PULLUPS
+  WEIGHTED_PULLUPS,
+  DL,
+  OHP,
 }
 
 export function toName(exercise: ExerciseType) {
@@ -15,6 +17,10 @@ export function toName(exercise: ExerciseType) {
       return "Back Squat";
     case ExerciseType.WEIGHTED_PULLUPS:
       return "Weighted Pullups";
+    case ExerciseType.DL:
+      return "Deadlift";
+    case ExerciseType.OHP:
+      return "Overhead Press";
     default:
       throw new Error(`Non-existent exercise type in switch: ${exercise}`);
   }
@@ -57,11 +63,14 @@ export function UserConfigProvider({ children }: { children: React.ReactNode }) 
   exercises.set(ExerciseType.BENCH_PRESS, useState<number>(0));
   exercises.set(ExerciseType.BACK_SQUAT, useState<number>(0));
   exercises.set(ExerciseType.WEIGHTED_PULLUPS, useState<number>(0));
+  exercises.set(ExerciseType.DL, useState<number>(0));
+  exercises.set(ExerciseType.OHP, useState<number>(0));
 
   const lastExercises = new Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>();
   lastExercises.set(ExerciseType.BENCH_PRESS, useState<number>(0));
   lastExercises.set(ExerciseType.BACK_SQUAT, useState<number>(0));
   lastExercises.set(ExerciseType.WEIGHTED_PULLUPS, useState<number>(0));
+  // TODO DL and OHP missing
 
   const userConfig: UserConfig = {
     exercises,

@@ -15,13 +15,15 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { ExerciseType, UserConfig, useUserConfig } from "@/contexts/UserConfigContext";
+import { ExerciseType, UserConfig, toName, useUserConfig } from "@/contexts/UserConfigContext";
 
 export default function Cluster() {
   const userConfig: UserConfig = useUserConfig();
   const [benchPress, setBenchPress] = userConfig.exercises.get(ExerciseType.BENCH_PRESS)!;
   const [backSquat, setBackSquat] = userConfig.exercises.get(ExerciseType.BACK_SQUAT)!;
   const [weightedPullups, setWeightedPullups] = userConfig.exercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
+  const [dl, setDL] = userConfig.exercises.get(ExerciseType.DL)!;
+  const [ohp, setOHP] = userConfig.exercises.get(ExerciseType.OHP)!;
 
   const [lastBenchPress, setLastBenchPress] = userConfig.lastExercises.get(ExerciseType.BENCH_PRESS)!;
   const [lastBackSquat, setLastBackSquat] = userConfig.lastExercises.get(ExerciseType.BACK_SQUAT)!;
@@ -46,7 +48,7 @@ export default function Cluster() {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="font-semibold">Bench press</TableCell>
+              <TableCell className="font-semibold">{toName(ExerciseType.BENCH_PRESS)}</TableCell>
               <TableCell>
                 <Label htmlFor="ex-1" className="sr-only">
                   Current 1RM
@@ -62,7 +64,7 @@ export default function Cluster() {
             </TableRow>
 
             <TableRow>
-              <TableCell className="font-semibold">Back squat</TableCell>
+              <TableCell className="font-semibold">{toName(ExerciseType.BACK_SQUAT)}</TableCell>
               <TableCell>
                 <Label htmlFor="ex-2" className="sr-only">
                   Current 1RM
@@ -78,7 +80,7 @@ export default function Cluster() {
             </TableRow>
 
             <TableRow>
-              <TableCell className="font-semibold">Weighted pullups</TableCell>
+              <TableCell className="font-semibold">{toName(ExerciseType.WEIGHTED_PULLUPS)}</TableCell>
               <TableCell>
                 <Label htmlFor="ex-3" className="sr-only">
                   Current 1RM
@@ -90,6 +92,26 @@ export default function Cluster() {
                   Last 1RM
                 </Label>
                 <Input id="last-ex-2" type="number" min={0} defaultValue={lastWeightedPullups} onChange={(e) => setLastWeightedPullups(e.target.valueAsNumber)} />
+              </TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell className="font-semibold">{toName(ExerciseType.DL)}</TableCell>
+              <TableCell>
+                <Label htmlFor="ex-3" className="sr-only">
+                  Current 1RM
+                </Label>
+                <Input id="ex-3" type="number" min={0} defaultValue={dl} onChange={(e) => setDL(e.target.valueAsNumber)} />
+              </TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell className="font-semibold">{toName(ExerciseType.OHP)}</TableCell>
+              <TableCell>
+                <Label htmlFor="ex-3" className="sr-only">
+                  Current 1RM
+                </Label>
+                <Input id="ex-3" type="number" min={0} defaultValue={ohp} onChange={(e) => setOHP(e.target.valueAsNumber)} />
               </TableCell>
             </TableRow>
           </TableBody>
