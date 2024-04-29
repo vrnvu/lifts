@@ -7,6 +7,8 @@ export default function Program531BView() {
   const userConfig: UserConfig = useUserConfig();
   const benchPress = getWeight(userConfig, ExerciseType.BENCH_PRESS);
   const backSquat = getWeight(userConfig, ExerciseType.BACK_SQUAT);
+  const dl = getWeight(userConfig, ExerciseType.DL);
+  const ohp = getWeight(userConfig, ExerciseType.OHP);
 
   const week1: StrengthFlexExercise[][] = [
     [
@@ -27,17 +29,17 @@ export default function Program531BView() {
     ],
     [
       {
-        name: toName(ExerciseType.BENCH_PRESS), sets: [
-          ["5 reps", (benchPress * 0.65).toFixed(1)],
-          ["5 reps", (benchPress * 0.75).toFixed(1)],
-          ["+5 reps", (benchPress * 0.85).toFixed(1)],
+        name: toName(ExerciseType.DL), sets: [
+          ["5 reps", (dl * 0.65).toFixed(1)],
+          ["5 reps", (dl * 0.75).toFixed(1)],
+          ["+5 reps", (dl * 0.85).toFixed(1)],
         ]
       },
       {
-        name: toName(ExerciseType.BACK_SQUAT), sets: [
-          ["5 reps", (backSquat * 0.65).toFixed(1)],
-          ["5 reps", (backSquat * 0.75).toFixed(1)],
-          ["+5 reps", (backSquat * 0.85).toFixed(1)],
+        name: toName(ExerciseType.OHP), sets: [
+          ["5 reps", (ohp * 0.65).toFixed(1)],
+          ["5 reps", (ohp * 0.75).toFixed(1)],
+          ["+5 reps", (ohp * 0.85).toFixed(1)],
         ]
       }
     ],
