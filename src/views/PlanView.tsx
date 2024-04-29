@@ -2,8 +2,7 @@ import Cluster from "@/components/Cluster";
 import Component from "@/components/Component";
 import { ExerciseType, UserConfig, getWeight, getWeightLast, useUserConfig } from "@/contexts/UserConfigContext";
 
-export interface PlanViewProps {}
-export default function PlanView({}: PlanViewProps) {
+export default function PlanView() {
 	const userConfig: UserConfig = useUserConfig();
 
 	const benchPress = getWeight(userConfig, ExerciseType.BENCH_PRESS);

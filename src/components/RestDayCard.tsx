@@ -7,9 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-interface RestDayCardProps {}
-
-export default function RestDayCard({}: RestDayCardProps) {
+export default function RestDayCard() {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-2 pb-2">

@@ -17,8 +17,7 @@ import {
 } from "@/components/ui/table"
 import { ExerciseType, UserConfig, useUserConfig } from "@/contexts/UserConfigContext";
 
-export interface ClusterProps {}
-export default function Cluster({}: ClusterProps) {
+export default function Cluster() {
 	const userConfig: UserConfig = useUserConfig();
   const [benchPress, setBenchPress] = userConfig.exercises.get(ExerciseType.BENCH_PRESS)!;
   const [backSquat, setBackSquat] = userConfig.exercises.get(ExerciseType.BACK_SQUAT)!;
