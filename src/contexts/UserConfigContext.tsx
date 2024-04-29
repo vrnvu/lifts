@@ -7,6 +7,19 @@ export enum ExerciseType {
   WEIGHTED_PULLUPS
 }
 
+export function toName(exercise: ExerciseType) {
+  switch (exercise) {
+    case ExerciseType.BENCH_PRESS:
+      return "Bench Press";
+    case ExerciseType.BACK_SQUAT:
+      return "Back Squat";
+    case ExerciseType.WEIGHTED_PULLUPS:
+      return "Weighted Pullups";
+    default:
+      throw new Error(`Non-existent exercise type in switch: ${exercise}`);
+  }
+}
+
 export interface UserConfig {
   exercises: Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>;
   lastExercises: Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>;
