@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import PlanView from './views/PlanView'
 import ProgramView from './views/ProgramView'
-import { UserConfigProvider } from './context/UserConfigContext'
+import { UserConfigProvider } from './contexts/UserConfigContext'
 
 
 function App() {

@@ -15,11 +15,18 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { UserConfig, useUserConfig } from "@/context/UserConfigContext";
+import { ExerciseType, UserConfig, useUserConfig } from "@/contexts/UserConfigContext";
 
 export interface ClusterProps {}
 export default function Cluster({}: ClusterProps) {
 	const userConfig: UserConfig = useUserConfig();
+  const [benchPress, setBenchPress] = userConfig.exercises.get(ExerciseType.BENCH_PRESS)!;
+  const [backSquat, setBackSquat] = userConfig.exercises.get(ExerciseType.BACK_SQUAT)!;
+  const [weightedPullups, setWeightedPullups] = userConfig.exercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
+
+  const [lastBenchPress, setLastBenchPress] = userConfig.lastExercises.get(ExerciseType.BENCH_PRESS)!;
+  const [lastBackSquat, setLastBackSquat] = userConfig.lastExercises.get(ExerciseType.BACK_SQUAT)!;
+  const [lastWeightedPullups, setLastWeightedPullups] = userConfig.lastExercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
 
   return (
     <Card>
@@ -45,13 +52,13 @@ export default function Cluster({}: ClusterProps) {
                 <Label htmlFor="ex-1" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-1" type="number" min={0} defaultValue={userConfig.benchPress} onChange={(e) => userConfig.setBenchPress(e.target.valueAsNumber)}/>
+                <Input id="ex-1" type="number" min={0} defaultValue={benchPress} onChange={(e) => setBenchPress(e.target.valueAsNumber)}/>
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-1" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-1" type="number" min={0} defaultValue={userConfig.lastBenchPress} onChange={(e) => userConfig.setLastBenchPress(e.target.valueAsNumber)}/>
+                <Input id="last-ex-1" type="number" min={0} defaultValue={lastBenchPress} onChange={(e) => setLastBenchPress(e.target.valueAsNumber)}/>
               </TableCell>
             </TableRow>
 
@@ -61,13 +68,13 @@ export default function Cluster({}: ClusterProps) {
                 <Label htmlFor="ex-2" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-2" type="number" min={0} defaultValue={userConfig.backSquat} onChange={(e) => userConfig.setBackSquat(e.target.valueAsNumber)}/>
+                <Input id="ex-2" type="number" min={0} defaultValue={backSquat} onChange={(e) => setBackSquat(e.target.valueAsNumber)}/>
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-2" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-2" type="number" min={0} defaultValue={userConfig.lastBackSquat} onChange={(e) => userConfig.setLastBackSquat(e.target.valueAsNumber)}/>
+                <Input id="last-ex-2" type="number" min={0} defaultValue={lastBackSquat} onChange={(e) => setLastBackSquat(e.target.valueAsNumber)}/>
               </TableCell>
             </TableRow>
 
@@ -77,13 +84,13 @@ export default function Cluster({}: ClusterProps) {
                 <Label htmlFor="ex-3" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-3" type="number" min={0} defaultValue={userConfig.weightedPullups} onChange={(e) => userConfig.setWeightedPullups(e.target.valueAsNumber)}/>
+                <Input id="ex-3" type="number" min={0} defaultValue={weightedPullups} onChange={(e) => setWeightedPullups(e.target.valueAsNumber)}/>
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-3" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-2" type="number" min={0} defaultValue={userConfig.lastWeightedPullups} onChange={(e) => userConfig.setLastWeightedPullups(e.target.valueAsNumber)}/>
+                <Input id="last-ex-2" type="number" min={0} defaultValue={lastWeightedPullups} onChange={(e) => setLastWeightedPullups(e.target.valueAsNumber)}/>
               </TableCell>
             </TableRow>
           </TableBody>
