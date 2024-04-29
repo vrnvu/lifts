@@ -8,16 +8,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { ExerciseType, UserConfig, useUserConfig } from "@/contexts/UserConfigContext";
+import { ExerciseType, UserConfig, getWeight, useUserConfig } from "@/contexts/UserConfigContext";
 
 export interface ProgramViewProps {}
 export default function ProgramView({}: ProgramViewProps) {
   const userConfig: UserConfig = useUserConfig();
 
   const exercieses: StrengthExercise[] =  [
-      {name: "Bench press", sets: "3x5", weight: userConfig.exercises.get(ExerciseType.BENCH_PRESS)![0]},
-      {name: "Back squat", sets: "3x5", weight: userConfig.exercises.get(ExerciseType.BACK_SQUAT)![0]},
-      {name: "Weighted pullups", sets: "3x5", weight: userConfig.exercises.get(ExerciseType.WEIGHTED_PULLUPS)![0]}
+      {name: "Bench press", sets: "3x5", weight: getWeight(userConfig, ExerciseType.BENCH_PRESS)},
+      {name: "Back squat", sets: "3x5", weight: getWeight(userConfig, ExerciseType.BACK_SQUAT)},
+      {name: "Weighted pullups", sets: "3x5", weight: getWeight(userConfig, ExerciseType.WEIGHTED_PULLUPS)}
   ];
 
   const weekIds = ["item-1", "item-2", "item-3", "item-4", "item-5", "item-6", "item-7"];

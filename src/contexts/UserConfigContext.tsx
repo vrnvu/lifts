@@ -12,6 +12,22 @@ export interface UserConfig {
   lastExercises: Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>;
 }
 
+export function updateWeight(userConfig: UserConfig, exercise: ExerciseType): Dispatch<SetStateAction<number>> {
+  return userConfig.exercises.get(exercise)![1];
+}
+
+export function updateLastWeight(userConfig: UserConfig, exercise: ExerciseType): Dispatch<SetStateAction<number>> {
+  return userConfig.lastExercises.get(exercise)![1];
+}
+
+export function getWeight(userConfig: UserConfig, exercise: ExerciseType): number {
+  return userConfig.exercises.get(exercise)![0];
+}
+
+export function getWeightLast(userConfig: UserConfig, exercise: ExerciseType): number {
+  return userConfig.lastExercises.get(exercise)![0];
+}
+
 const UserConfigContext = createContext<UserConfig | undefined>(undefined);
 
 export const useUserConfig: () => UserConfig = () => {

@@ -1,20 +1,19 @@
 import Cluster from "@/components/Cluster";
 import Component from "@/components/Component";
-import { ExerciseType, UserConfig, useUserConfig } from "@/contexts/UserConfigContext";
+import { ExerciseType, UserConfig, getWeight, getWeightLast, useUserConfig } from "@/contexts/UserConfigContext";
 
 export interface PlanViewProps {}
 export default function PlanView({}: PlanViewProps) {
 	const userConfig: UserConfig = useUserConfig();
 
-	const benchPress = userConfig.exercises.get(ExerciseType.BENCH_PRESS)![0];
-	const backSquat = userConfig.exercises.get(ExerciseType.BACK_SQUAT)![0];
-	const weightedPullups = userConfig.exercises.get!(ExerciseType.WEIGHTED_PULLUPS)![0];
+	const benchPress = getWeight(userConfig, ExerciseType.BENCH_PRESS);
+	const backSquat = getWeight(userConfig, ExerciseType.BACK_SQUAT);
+	const weightedPullups = getWeight(userConfig, ExerciseType.WEIGHTED_PULLUPS);
 	const total = benchPress + backSquat + weightedPullups;
 
-	const lastBenchPress = userConfig.lastExercises.get(ExerciseType.BENCH_PRESS)![0]; 
-	const lastBackSquat = userConfig.lastExercises.get(ExerciseType.BACK_SQUAT)![0]; 
-	const lastWeightedPullups = userConfig.lastExercises.get!(ExerciseType.WEIGHTED_PULLUPS)![0];
-
+	const lastBenchPress = getWeightLast(userConfig, ExerciseType.BENCH_PRESS);
+	const lastBackSquat = getWeightLast(userConfig, ExerciseType.BACK_SQUAT);
+	const lastWeightedPullups = getWeightLast(userConfig, ExerciseType.WEIGHTED_PULLUPS);
 	const lastTotal = lastBenchPress + lastBackSquat + lastWeightedPullups;
 
 	const benchIncrease = Math.round(((benchPress - lastBenchPress)/ lastBenchPress) * 100); 
