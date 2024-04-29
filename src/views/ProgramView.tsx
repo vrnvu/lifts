@@ -20,8 +20,10 @@ export default function ProgramView({}: ProgramViewProps) {
       {name: "Weighted pullups", sets: "3x5", weight: userConfig.weightedPullups}
   ];
 
+  const weekIds = ["item-1", "item-2", "item-3", "item-4", "item-5", "item-6", "item-7"];
+
 	return (
-      <Accordion type="multiple">
+      <Accordion type="multiple" defaultValue={weekIds}>
         <AccordionItem value="item-1">
           <AccordionTrigger>Week 1</AccordionTrigger>
           <AccordionContent>
