@@ -8,15 +8,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { UserConfigContext } from "@/context/UserConfigContext";
-import { useContext } from "react";
+import { UserConfig, useUserConfig } from "@/context/UserConfigContext";
 
 export interface ProgramViewProps {}
 export default function ProgramView({}: ProgramViewProps) {
-  const userConfig = useContext(UserConfigContext);
-  if (userConfig == undefined) {
-    return;
-  }
+  const userConfig: UserConfig = useUserConfig();
 
   const exercieses: StrengthExercise[] =  [
       {name: "Bench press", sets: "3x5", weight: userConfig.benchPress},

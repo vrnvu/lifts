@@ -1,11 +1,10 @@
 import Cluster from "@/components/Cluster";
 import Component from "@/components/Component";
-import { UserConfig, UserConfigContext } from "@/context/UserConfigContext";
-import { useContext } from "react";
+import { UserConfig, useUserConfig } from "@/context/UserConfigContext";
 
 export interface PlanViewProps {}
 export default function PlanView({}: PlanViewProps) {
-	const userConfig: UserConfig = useContext(UserConfigContext);
+	const userConfig: UserConfig = useUserConfig();
 
 	const benchPress = userConfig.benchPress;
 	const backSquat = userConfig.backSquat;
@@ -17,7 +16,7 @@ export default function PlanView({}: PlanViewProps) {
 	const lastWeightedPullups = userConfig.lastWeightedPullups;
 	const lastTotal = lastBenchPress + lastBackSquat + lastWeightedPullups;
 
-	const benchIncrease = Math.round(((benchPress - lastBenchPress) / lastBenchPress) * 100); 
+	const benchIncrease = Math.round(((benchPress - lastBenchPress)/ lastBenchPress) * 100); 
 	const backSquatIncrease = Math.round(((backSquat - lastBackSquat) / lastBackSquat) * 100); 
 	const weightedPullupsIncrease = Math.round(((weightedPullups - lastWeightedPullups) / lastWeightedPullups) * 100);
 	const totalIncrease = Math.round(((total - lastTotal) / lastTotal) * 100);

@@ -1,3 +1,4 @@
+import React from "react";
 import { createContext, useState } from "react";
 
 export interface UserConfig {
@@ -32,7 +33,9 @@ const init: UserConfig = {
   setLastWeightedPullups: (_) => {}
 };
 
-export const UserConfigContext = createContext<UserConfig>(init);
+const UserConfigContext = createContext<UserConfig>(init);
+
+export const useUserConfig = () => React.useContext(UserConfigContext)
 
 export function UserConfigProvider({ children }: { children: React.ReactNode }) {
   const [benchPress, setBenchPress] = useState<number>(0);

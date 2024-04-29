@@ -15,13 +15,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { UserConfigContext } from "@/context/UserConfigContext";
-
-import { useContext } from "react";
+import { UserConfig, useUserConfig } from "@/context/UserConfigContext";
 
 export interface ClusterProps {}
 export default function Cluster({}: ClusterProps) {
-	const userConfig = useContext(UserConfigContext);
+	const userConfig: UserConfig = useUserConfig();
 
   return (
     <Card>
