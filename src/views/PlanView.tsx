@@ -15,22 +15,22 @@ export default function PlanView() {
 	const lastWeightedPullups = getWeightLast(userConfig, ExerciseType.WEIGHTED_PULLUPS);
 	const lastTotal = lastBenchPress + lastBackSquat + lastWeightedPullups;
 
-	const benchIncrease = Math.round(((benchPress - lastBenchPress)/ lastBenchPress) * 100); 
-	const backSquatIncrease = Math.round(((backSquat - lastBackSquat) / lastBackSquat) * 100); 
+	const benchIncrease = Math.round(((benchPress - lastBenchPress) / lastBenchPress) * 100);
+	const backSquatIncrease = Math.round(((backSquat - lastBackSquat) / lastBackSquat) * 100);
 	const weightedPullupsIncrease = Math.round(((weightedPullups - lastWeightedPullups) / lastWeightedPullups) * 100);
 	const totalIncrease = Math.round(((total - lastTotal) / lastTotal) * 100);
 
 	return (
-	<div className="grid grid-cols-3 gap-4">
-		<Cluster />
-		<div className="grid grid-cols-subgrid grid-cols-2 gap-4">
-			<Component exercise='Bench press' kgs={benchPress.toString()} increase={benchIncrease} />
-			<Component exercise='Back squat' kgs={backSquat.toString()} increase={backSquatIncrease} />
+		<div className="grid grid-cols-3 gap-4">
+			<Cluster />
+			<div className="grid grid-cols-subgrid grid-cols-2 gap-4">
+				<Component exercise='Bench press' kgs={benchPress.toString()} increase={benchIncrease} />
+				<Component exercise='Back squat' kgs={backSquat.toString()} increase={backSquatIncrease} />
+			</div>
+			<div className="grid grid-cols-subgrid grid-cols-2 gap-4">
+				<Component exercise='Weighted pullups' kgs={weightedPullups.toString()} increase={weightedPullupsIncrease} />
+				<Component exercise='Total volume' kgs={total.toString()} increase={totalIncrease} />
+			</div>
 		</div>
-		<div className="grid grid-cols-subgrid grid-cols-2 gap-4">
-			<Component exercise='Weighted pullups' kgs={weightedPullups.toString()} increase={weightedPullupsIncrease} />
-			<Component exercise='Total volume' kgs={total.toString()} increase={totalIncrease} />
-		</div>
-	</div>
 	);
 }

@@ -18,7 +18,7 @@ import {
 import { ExerciseType, UserConfig, useUserConfig } from "@/contexts/UserConfigContext";
 
 export default function Cluster() {
-	const userConfig: UserConfig = useUserConfig();
+  const userConfig: UserConfig = useUserConfig();
   const [benchPress, setBenchPress] = userConfig.exercises.get(ExerciseType.BENCH_PRESS)!;
   const [backSquat, setBackSquat] = userConfig.exercises.get(ExerciseType.BACK_SQUAT)!;
   const [weightedPullups, setWeightedPullups] = userConfig.exercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
@@ -51,13 +51,13 @@ export default function Cluster() {
                 <Label htmlFor="ex-1" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-1" type="number" min={0} defaultValue={benchPress} onChange={(e) => setBenchPress(e.target.valueAsNumber)}/>
+                <Input id="ex-1" type="number" min={0} defaultValue={benchPress} onChange={(e) => setBenchPress(e.target.valueAsNumber)} />
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-1" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-1" type="number" min={0} defaultValue={lastBenchPress} onChange={(e) => setLastBenchPress(e.target.valueAsNumber)}/>
+                <Input id="last-ex-1" type="number" min={0} defaultValue={lastBenchPress} onChange={(e) => setLastBenchPress(e.target.valueAsNumber)} />
               </TableCell>
             </TableRow>
 
@@ -67,13 +67,13 @@ export default function Cluster() {
                 <Label htmlFor="ex-2" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-2" type="number" min={0} defaultValue={backSquat} onChange={(e) => setBackSquat(e.target.valueAsNumber)}/>
+                <Input id="ex-2" type="number" min={0} defaultValue={backSquat} onChange={(e) => setBackSquat(e.target.valueAsNumber)} />
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-2" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-2" type="number" min={0} defaultValue={lastBackSquat} onChange={(e) => setLastBackSquat(e.target.valueAsNumber)}/>
+                <Input id="last-ex-2" type="number" min={0} defaultValue={lastBackSquat} onChange={(e) => setLastBackSquat(e.target.valueAsNumber)} />
               </TableCell>
             </TableRow>
 
@@ -83,13 +83,13 @@ export default function Cluster() {
                 <Label htmlFor="ex-3" className="sr-only">
                   Current 1RM
                 </Label>
-                <Input id="ex-3" type="number" min={0} defaultValue={weightedPullups} onChange={(e) => setWeightedPullups(e.target.valueAsNumber)}/>
+                <Input id="ex-3" type="number" min={0} defaultValue={weightedPullups} onChange={(e) => setWeightedPullups(e.target.valueAsNumber)} />
               </TableCell>
               <TableCell>
                 <Label htmlFor="last-ex-3" className="sr-only">
                   Last 1RM
                 </Label>
-                <Input id="last-ex-2" type="number" min={0} defaultValue={lastWeightedPullups} onChange={(e) => setLastWeightedPullups(e.target.valueAsNumber)}/>
+                <Input id="last-ex-2" type="number" min={0} defaultValue={lastWeightedPullups} onChange={(e) => setLastWeightedPullups(e.target.valueAsNumber)} />
               </TableCell>
             </TableRow>
           </TableBody>

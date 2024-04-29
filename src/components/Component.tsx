@@ -9,12 +9,12 @@ import {
 import { Progress } from "@/components/ui/progress"
 
 export interface ComponentProps {
-	exercise: string;
-	kgs: string;
-	increase: number;
+  exercise: string;
+  kgs: string;
+  increase: number;
 }
 
-export default function Component({exercise, kgs, increase}: ComponentProps) {
+export default function Component({ exercise, kgs, increase }: ComponentProps) {
   return (
     <Card>
       <CardHeader className="pb-2">

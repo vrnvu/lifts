@@ -18,7 +18,7 @@ export interface StrengthDayCardProps {
   effort: number;
 }
 
-export default function StrengthDayCard({exercises, effort}: StrengthDayCardProps) {
+export default function StrengthDayCard({ exercises, effort }: StrengthDayCardProps) {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-2 pb-2">
@@ -27,8 +27,8 @@ export default function StrengthDayCard({exercises, effort}: StrengthDayCardProp
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">Operator</div>
-          <div className="space-y-4 text-xs text-muted-foreground">
-            {exercises.map((exercise, index) => (
+        <div className="space-y-4 text-xs text-muted-foreground">
+          {exercises.map((exercise, index) => (
             <div key={index}>
               <div>{exercise.name}</div>
               <div>
