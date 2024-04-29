@@ -2,6 +2,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -16,9 +17,12 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { ExerciseType, UserConfig, toName, useUserConfig } from "@/contexts/UserConfigContext";
+import { Button } from "./ui/button";
 
 export default function Cluster() {
   const userConfig: UserConfig = useUserConfig();
+
+
   const [benchPress, setBenchPress] = userConfig.exercises.get(ExerciseType.BENCH_PRESS)!;
   const [backSquat, setBackSquat] = userConfig.exercises.get(ExerciseType.BACK_SQUAT)!;
   const [weightedPullups, setWeightedPullups] = userConfig.exercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
@@ -116,6 +120,9 @@ export default function Cluster() {
             </TableRow>
           </TableBody>
         </Table>
+        <CardFooter>
+          <Button className="w-full">Todo Save</Button>
+        </CardFooter>
       </CardContent>
     </Card>
   )
