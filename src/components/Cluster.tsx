@@ -32,6 +32,8 @@ export default function Cluster() {
   const [lastBenchPress, setLastBenchPress] = userConfig.lastExercises.get(ExerciseType.BENCH_PRESS)!;
   const [lastBackSquat, setLastBackSquat] = userConfig.lastExercises.get(ExerciseType.BACK_SQUAT)!;
   const [lastWeightedPullups, setLastWeightedPullups] = userConfig.lastExercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
+  const [lastDL, setLastDL] = userConfig.lastExercises.get(ExerciseType.DL)!;
+  const [lastOHP, setLastOHP] = userConfig.lastExercises.get(ExerciseType.OHP)!;
 
   const exercises = [
     {
@@ -59,11 +61,15 @@ export default function Cluster() {
       type: ExerciseType.DL,
       current: dl,
       setCurrent: setDL,
+      last: lastDL,
+      setLast: setLastDL
     },
     {
       type: ExerciseType.OHP,
       current: ohp,
       setCurrent: setOHP,
+      last: lastOHP,
+      setLast: setLastOHP
     },
   ];
 
@@ -93,14 +99,26 @@ export default function Cluster() {
                     <Label htmlFor={`ex-${index}`} className="sr-only">
                       Current 1RM
                     </Label>
-                    <Input className="text-lg p-2 w-full" id={`ex-${index}`} type="number" min={0} defaultValue={exercise.current} onChange={(e) => exercise.setCurrent(e.target.valueAsNumber)} />
+                    <Input
+                      className="text-lg p-2 w-full"
+                      id={`ex-${index}`}
+                      type="number"
+                      min={0}
+                      defaultValue={exercise.current}
+                      onChange={(e) => exercise.setCurrent(e.target.valueAsNumber)} />
                   </TableCell>
                   {exercise.last != undefined && (
                     <TableCell className="px-1">
                       <Label htmlFor={`last-ex-${index}`} className="sr-only">
                         Last 1RM
                       </Label>
-                      <Input className="text-lg p-2 w-full" id={`last-ex-${index}`} type="number" min={0} defaultValue={exercise.last} onChange={(e) => exercise.setLast(e.target.valueAsNumber)} />
+                      <Input
+                        className="text-lg p-2 w-full"
+                        id={`last-ex-${index}`}
+                        type="number"
+                        min={0}
+                        defaultValue={exercise.last}
+                        onChange={(e) => exercise.setLast(e.target.valueAsNumber)} />
                     </TableCell>
                   )}
                 </TableRow>

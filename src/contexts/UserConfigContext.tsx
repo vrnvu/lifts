@@ -70,7 +70,8 @@ export function UserConfigProvider({ children }: { children: React.ReactNode }) 
   lastExercises.set(ExerciseType.BENCH_PRESS, useState<number>(0));
   lastExercises.set(ExerciseType.BACK_SQUAT, useState<number>(0));
   lastExercises.set(ExerciseType.WEIGHTED_PULLUPS, useState<number>(0));
-  // TODO DL and OHP missing
+  lastExercises.set(ExerciseType.DL, useState<number>(0));
+  lastExercises.set(ExerciseType.OHP, useState<number>(0));
 
   const userConfig: UserConfig = {
     exercises,
