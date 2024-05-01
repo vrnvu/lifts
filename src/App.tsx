@@ -7,6 +7,7 @@ import PlanView from './views/PlanView'
 import { UserConfigProvider } from './contexts/UserConfigContext'
 import ProgramOperatorView from './views/ProgramOperatorView'
 import Program531BView from './views/Program531BView'
+import ProgramGZCLPView from './views/ProgramGZCLPView'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <TabsTrigger value="plan">Plan</TabsTrigger>
               <TabsTrigger value="program-operator">Operator</TabsTrigger>
               <TabsTrigger value="program-531b">5/3/1 Beginner</TabsTrigger>
+              <TabsTrigger value="program-gzclp">GZCLP</TabsTrigger>
             </TabsList>
             <TabsContent value="plan">
               <PlanView />
@@ -34,6 +36,9 @@ function App() {
             </TabsContent>
             <TabsContent value="program-531b">
               <Program531BView />
+            </TabsContent>
+            <TabsContent value="program-gzclp">
+              <ProgramGZCLPView />
             </TabsContent>
           </Tabs>
         </main>
