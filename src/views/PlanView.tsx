@@ -21,13 +21,13 @@ export default function PlanView() {
 	const totalIncrease = Math.round(((total - lastTotal) / lastTotal) * 100);
 
 	return (
-		<div className="grid grid-cols-3 gap-4">
+		<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 			<Cluster />
-			<div className="grid grid-cols-subgrid grid-cols-2 gap-4">
+			<div className="grid grid-cols-1 md:grid-cols-subgrid md:grid-cols-2 gap-4">
 				<Component exercise='Bench press' kgs={benchPress.toString()} increase={benchIncrease} />
 				<Component exercise='Back squat' kgs={backSquat.toString()} increase={backSquatIncrease} />
 			</div>
-			<div className="grid grid-cols-subgrid grid-cols-2 gap-4">
+			<div className="grid grid-cols-1 md:grid-cols-subgrid md:grid-cols-2 gap-4">
 				<Component exercise='Weighted pullups' kgs={weightedPullups.toString()} increase={weightedPullupsIncrease} />
 				<Component exercise='Total volume' kgs={total.toString()} increase={totalIncrease} />
 			</div>

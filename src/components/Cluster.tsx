@@ -33,6 +33,40 @@ export default function Cluster() {
   const [lastBackSquat, setLastBackSquat] = userConfig.lastExercises.get(ExerciseType.BACK_SQUAT)!;
   const [lastWeightedPullups, setLastWeightedPullups] = userConfig.lastExercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
 
+  const exercises = [
+    {
+      type: ExerciseType.BENCH_PRESS,
+      current: benchPress,
+      setCurrent: setBenchPress,
+      last: lastBenchPress,
+      setLast: setLastBenchPress
+    },
+    {
+      type: ExerciseType.BACK_SQUAT,
+      current: backSquat,
+      setCurrent: setBackSquat,
+      last: lastBackSquat,
+      setLast: setLastBackSquat
+    },
+    {
+      type: ExerciseType.WEIGHTED_PULLUPS,
+      current: weightedPullups,
+      setCurrent: setWeightedPullups,
+      last: lastWeightedPullups,
+      setLast: setLastWeightedPullups
+    },
+    {
+      type: ExerciseType.DL,
+      current: dl,
+      setCurrent: setDL,
+    },
+    {
+      type: ExerciseType.OHP,
+      current: ohp,
+      setCurrent: setOHP,
+    },
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -42,88 +76,42 @@ export default function Cluster() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[10px]">Exercise</TableHead>
-              <TableHead className="w-[200px]">Current 1 RM</TableHead>
-              <TableHead className="w-[200px]">Last 1 RM</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell className="font-semibold">{toName(ExerciseType.BENCH_PRESS)}</TableCell>
-              <TableCell>
-                <Label htmlFor="ex-1" className="sr-only">
-                  Current 1RM
-                </Label>
-                <Input id="ex-1" type="number" min={0} defaultValue={benchPress} onChange={(e) => setBenchPress(e.target.valueAsNumber)} />
-              </TableCell>
-              <TableCell>
-                <Label htmlFor="last-ex-1" className="sr-only">
-                  Last 1RM
-                </Label>
-                <Input id="last-ex-1" type="number" min={0} defaultValue={lastBenchPress} onChange={(e) => setLastBenchPress(e.target.valueAsNumber)} />
-              </TableCell>
-            </TableRow>
-
-            <TableRow>
-              <TableCell className="font-semibold">{toName(ExerciseType.BACK_SQUAT)}</TableCell>
-              <TableCell>
-                <Label htmlFor="ex-2" className="sr-only">
-                  Current 1RM
-                </Label>
-                <Input id="ex-2" type="number" min={0} defaultValue={backSquat} onChange={(e) => setBackSquat(e.target.valueAsNumber)} />
-              </TableCell>
-              <TableCell>
-                <Label htmlFor="last-ex-2" className="sr-only">
-                  Last 1RM
-                </Label>
-                <Input id="last-ex-2" type="number" min={0} defaultValue={lastBackSquat} onChange={(e) => setLastBackSquat(e.target.valueAsNumber)} />
-              </TableCell>
-            </TableRow>
-
-            <TableRow>
-              <TableCell className="font-semibold">{toName(ExerciseType.WEIGHTED_PULLUPS)}</TableCell>
-              <TableCell>
-                <Label htmlFor="ex-3" className="sr-only">
-                  Current 1RM
-                </Label>
-                <Input id="ex-3" type="number" min={0} defaultValue={weightedPullups} onChange={(e) => setWeightedPullups(e.target.valueAsNumber)} />
-              </TableCell>
-              <TableCell>
-                <Label htmlFor="last-ex-3" className="sr-only">
-                  Last 1RM
-                </Label>
-                <Input id="last-ex-2" type="number" min={0} defaultValue={lastWeightedPullups} onChange={(e) => setLastWeightedPullups(e.target.valueAsNumber)} />
-              </TableCell>
-            </TableRow>
-
-            <TableRow>
-              <TableCell className="font-semibold">{toName(ExerciseType.DL)}</TableCell>
-              <TableCell>
-                <Label htmlFor="ex-3" className="sr-only">
-                  Current 1RM
-                </Label>
-                <Input id="ex-3" type="number" min={0} defaultValue={dl} onChange={(e) => setDL(e.target.valueAsNumber)} />
-              </TableCell>
-            </TableRow>
-
-            <TableRow>
-              <TableCell className="font-semibold">{toName(ExerciseType.OHP)}</TableCell>
-              <TableCell>
-                <Label htmlFor="ex-3" className="sr-only">
-                  Current 1RM
-                </Label>
-                <Input id="ex-3" type="number" min={0} defaultValue={ohp} onChange={(e) => setOHP(e.target.valueAsNumber)} />
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-        <CardFooter>
-          <Button className="w-full">Todo Save</Button>
-        </CardFooter>
-      </CardContent>
-    </Card>
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-1/4 px-1">Exercise</TableHead>
+                <TableHead className="w-1/4 px-1">Current 1 RM</TableHead>
+                <TableHead className="w-1/4 px-1">Last 1 RM</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {exercises.map((exercise, index) => (
+                <TableRow key={exercise.type}>
+                  <TableCell className="font-semibold px-1">{toName(exercise.type)}</TableCell>
+                  <TableCell className="px-1">
+                    <Label htmlFor={`ex-${index}`} className="sr-only">
+                      Current 1RM
+                    </Label>
+                    <Input className="text-lg p-2 w-full" id={`ex-${index}`} type="number" min={0} defaultValue={exercise.current} onChange={(e) => exercise.setCurrent(e.target.valueAsNumber)} />
+                  </TableCell>
+                  {exercise.last != undefined && (
+                    <TableCell className="px-1">
+                      <Label htmlFor={`last-ex-${index}`} className="sr-only">
+                        Last 1RM
+                      </Label>
+                      <Input className="text-lg p-2 w-full" id={`last-ex-${index}`} type="number" min={0} defaultValue={exercise.last} onChange={(e) => exercise.setLast(e.target.valueAsNumber)} />
+                    </TableCell>
+                  )}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          <CardFooter>
+            <Button className="w-full">Todo Save</Button>
+          </CardFooter>
+        </div>
+      </CardContent >
+    </Card >
   )
 }
