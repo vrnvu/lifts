@@ -8,6 +8,7 @@ import ProgramOperatorView from './views/ProgramOperatorView'
 import Program531BView from './views/Program531BView'
 import ProgramGZCLPView from './views/ProgramGZCLPView'
 import ProgressView from './views/ProgressView'
+import MesoView from './views/MesoView'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <TabsTrigger value="program-operator">Operator</TabsTrigger>
               <TabsTrigger value="program-531b">5/3/1 Beginner</TabsTrigger>
               <TabsTrigger value="program-gzclp">GZCLP</TabsTrigger>
+              <TabsTrigger value="meso">Meso</TabsTrigger>
             </TabsList>
             <TabsContent value="progress">
               <ProgressView />
@@ -39,6 +41,9 @@ function App() {
             </TabsContent>
             <TabsContent value="program-gzclp">
               <ProgramGZCLPView />
+            </TabsContent>
+            <TabsContent value="meso">
+              <MesoView />
             </TabsContent>
           </Tabs>
         </main>
