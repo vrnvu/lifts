@@ -5,11 +5,9 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
-	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Icons } from "./ui/icons";
 import React from "react";
-import { Link } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const components: { title: string; href: string; description: string }[] = [
