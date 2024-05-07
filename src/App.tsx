@@ -3,11 +3,11 @@ import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 
-import PlanView from './views/PlanView'
 import { UserConfigProvider } from './contexts/UserConfigContext'
 import ProgramOperatorView from './views/ProgramOperatorView'
 import Program531BView from './views/Program531BView'
 import ProgramGZCLPView from './views/ProgramGZCLPView'
+import ProgressView from './views/ProgressView'
 
 
 function App() {
@@ -21,15 +21,15 @@ function App() {
 
       <UserConfigProvider>
         <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 bg-muted/80 p-4 md:gap-8 md:p-10">
-          <Tabs defaultValue="plan" className="mb-4">
+          <Tabs defaultValue="progress" className="mb-4">
             <TabsList>
-              <TabsTrigger value="plan">Plan</TabsTrigger>
+              <TabsTrigger value="progress">Progress</TabsTrigger>
               <TabsTrigger value="program-operator">Operator</TabsTrigger>
               <TabsTrigger value="program-531b">5/3/1 Beginner</TabsTrigger>
               <TabsTrigger value="program-gzclp">GZCLP</TabsTrigger>
             </TabsList>
-            <TabsContent value="plan">
-              <PlanView />
+            <TabsContent value="progress">
+              <ProgressView />
             </TabsContent>
             <TabsContent value="program-operator">
               <ProgramOperatorView />
