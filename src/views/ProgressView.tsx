@@ -1,4 +1,3 @@
-import Benchmark from "@/components/Benchmark";
 import Cluster from "@/components/Cluster";
 import Component from "@/components/Component";
 import { ExerciseType, UserConfig, getWeight, getWeightLast, toName, useUserConfig } from "@/contexts/UserConfigContext";
