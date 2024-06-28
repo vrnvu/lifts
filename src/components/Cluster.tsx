@@ -2,7 +2,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -17,7 +16,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { ExerciseType, UserConfig, toName, useUserConfig } from "@/contexts/UserConfigContext";
-import { Button } from "./ui/button";
 
 export default function Cluster() {
   const userConfig: UserConfig = useUserConfig();
