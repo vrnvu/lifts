@@ -171,11 +171,11 @@ export default function Program531BView() {
         <AccordionTrigger>Week 1</AccordionTrigger>
         <AccordionContent>
           <div className="grid grid-cols-7 gap-4">
-            <StrengthFlexDayCard exercises={week1[0]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week1[0]} />
             <RestDayCard />
-            <StrengthFlexDayCard exercises={week1[1]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week1[1]} />
             <RestDayCard />
-            <StrengthFlexDayCard exercises={week1[2]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week1[2]} />
             <RestDayCard />
             <RestDayCard />
           </div>
@@ -185,11 +185,11 @@ export default function Program531BView() {
         <AccordionTrigger>Week 2</AccordionTrigger>
         <AccordionContent>
           <div className="grid grid-cols-7 gap-4">
-            <StrengthFlexDayCard exercises={week2[0]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week2[0]} />
             <RestDayCard />
-            <StrengthFlexDayCard exercises={week2[1]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week2[1]} />
             <RestDayCard />
-            <StrengthFlexDayCard exercises={week2[2]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week2[2]} />
             <RestDayCard />
             <RestDayCard />
           </div>
@@ -199,11 +199,11 @@ export default function Program531BView() {
         <AccordionTrigger>Week 3</AccordionTrigger>
         <AccordionContent>
           <div className="grid grid-cols-7 gap-4">
-            <StrengthFlexDayCard exercises={week3[0]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week3[0]} />
             <RestDayCard />
-            <StrengthFlexDayCard exercises={week3[1]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week3[1]} />
             <RestDayCard />
-            <StrengthFlexDayCard exercises={week3[2]} />
+            <StrengthFlexDayCard template="5/3/1" exercises={week3[2]} />
             <RestDayCard />
             <RestDayCard />
           </div>

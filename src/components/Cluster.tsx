@@ -29,47 +29,31 @@ export default function Cluster() {
   const [dl, setDL] = userConfig.exercises.get(ExerciseType.DL)!;
   const [ohp, setOHP] = userConfig.exercises.get(ExerciseType.OHP)!;
 
-  const [lastBenchPress, setLastBenchPress] = userConfig.lastExercises.get(ExerciseType.BENCH_PRESS)!;
-  const [lastBackSquat, setLastBackSquat] = userConfig.lastExercises.get(ExerciseType.BACK_SQUAT)!;
-  const [lastWeightedPullups, setLastWeightedPullups] = userConfig.lastExercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
-  const [lastDL, setLastDL] = userConfig.lastExercises.get(ExerciseType.DL)!;
-  const [lastOHP, setLastOHP] = userConfig.lastExercises.get(ExerciseType.OHP)!;
-
   const exercises = [
     {
       type: ExerciseType.BENCH_PRESS,
       current: benchPress,
       setCurrent: setBenchPress,
-      last: lastBenchPress,
-      setLast: setLastBenchPress
     },
     {
       type: ExerciseType.BACK_SQUAT,
       current: backSquat,
       setCurrent: setBackSquat,
-      last: lastBackSquat,
-      setLast: setLastBackSquat
     },
     {
       type: ExerciseType.WEIGHTED_PULLUPS,
       current: weightedPullups,
       setCurrent: setWeightedPullups,
-      last: lastWeightedPullups,
-      setLast: setLastWeightedPullups
     },
     {
       type: ExerciseType.DL,
       current: dl,
       setCurrent: setDL,
-      last: lastDL,
-      setLast: setLastDL
     },
     {
       type: ExerciseType.OHP,
       current: ohp,
       setCurrent: setOHP,
-      last: lastOHP,
-      setLast: setLastOHP
     },
   ];
 
@@ -88,7 +72,6 @@ export default function Cluster() {
               <TableRow>
                 <TableHead className="w-1/4 px-1">Exercise</TableHead>
                 <TableHead className="w-1/4 px-1">Current 1 RM</TableHead>
-                <TableHead className="w-1/4 px-1">Last 1 RM</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -107,27 +90,10 @@ export default function Cluster() {
                       defaultValue={exercise.current}
                       onChange={(e) => exercise.setCurrent(e.target.valueAsNumber)} />
                   </TableCell>
-                  {exercise.last != undefined && (
-                    <TableCell className="px-1">
-                      <Label htmlFor={`last-ex-${index}`} className="sr-only">
-                        Last 1RM
-                      </Label>
-                      <Input
-                        className="text-lg p-2 w-full"
-                        id={`last-ex-${index}`}
-                        type="number"
-                        min={0}
-                        defaultValue={exercise.last}
-                        onChange={(e) => exercise.setLast(e.target.valueAsNumber)} />
-                    </TableCell>
-                  )}
                 </TableRow>
               ))}
             </TableBody>
           </Table>
-          <CardFooter>
-            <Button className="w-full">Todo Save</Button>
-          </CardFooter>
         </div>
       </CardContent >
     </Card >

@@ -13,10 +13,11 @@ export interface StrengthFlexExercise {
 }
 
 export interface StrengthFlexDayCardProps {
+  template: string,
   exercises: StrengthFlexExercise[];
 }
 
-export default function StrengthFlexDayCard({ exercises }: StrengthFlexDayCardProps) {
+export default function StrengthFlexDayCard({ template, exercises }: StrengthFlexDayCardProps) {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-2 pb-2">
@@ -24,7 +25,7 @@ export default function StrengthFlexDayCard({ exercises }: StrengthFlexDayCardPr
         <Zap className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">5/3/1</div>
+        <div className="text-2xl font-bold">{template}</div>
         <div className="space-y-4 text-xs text-muted-foreground">
           {exercises.map((exercise, index) => (
             <div key={index}>

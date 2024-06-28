@@ -60,11 +60,11 @@ export const useUserConfig: () => UserConfig = () => {
 
 export function UserConfigProvider({ children }: { children: React.ReactNode }) {
   const exercises = new Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>();
-  exercises.set(ExerciseType.BENCH_PRESS, useState<number>(0));
-  exercises.set(ExerciseType.BACK_SQUAT, useState<number>(0));
-  exercises.set(ExerciseType.WEIGHTED_PULLUPS, useState<number>(0));
-  exercises.set(ExerciseType.DL, useState<number>(0));
-  exercises.set(ExerciseType.OHP, useState<number>(0));
+  exercises.set(ExerciseType.BENCH_PRESS, useState<number>(103));
+  exercises.set(ExerciseType.BACK_SQUAT, useState<number>(110));
+  exercises.set(ExerciseType.WEIGHTED_PULLUPS, useState<number>(116));
+  exercises.set(ExerciseType.DL, useState<number>(120));
+  exercises.set(ExerciseType.OHP, useState<number>(60));
 
   const lastExercises = new Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>();
   lastExercises.set(ExerciseType.BENCH_PRESS, useState<number>(0));
