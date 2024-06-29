@@ -24,7 +24,7 @@ export default function ProgramOperatorView() {
         <AccordionItem value="item-1">
           <AccordionTrigger>Week 1</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthDayCard exercises={exercises} effort={0.7} />
               <CardioDayCard minutes={30} />
               <StrengthDayCard exercises={exercises} effort={0.7} />
@@ -38,7 +38,7 @@ export default function ProgramOperatorView() {
         <AccordionItem value="item-2">
           <AccordionTrigger>Week 2</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthDayCard exercises={exercises} effort={0.8} />
               <CardioDayCard minutes={40} />
               <StrengthDayCard exercises={exercises} effort={0.8} />
@@ -52,7 +52,7 @@ export default function ProgramOperatorView() {
         <AccordionItem value="item-3">
           <AccordionTrigger>Week 3</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthDayCard exercises={exercises} effort={0.9} />
               <CardioDayCard minutes={50} />
               <StrengthDayCard exercises={exercises} effort={0.9} />
@@ -66,7 +66,7 @@ export default function ProgramOperatorView() {
         <AccordionItem value="item-5">
           <AccordionTrigger>Week 4</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthDayCard exercises={exercises} effort={0.75} />
               <CardioDayCard minutes={60} />
               <StrengthDayCard exercises={exercises} effort={0.75} />
@@ -80,7 +80,7 @@ export default function ProgramOperatorView() {
         <AccordionItem value="item-6">
           <AccordionTrigger>Week 5</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthDayCard exercises={exercises} effort={0.85} />
               <CardioDayCard minutes={70} />
               <StrengthDayCard exercises={exercises} effort={0.85} />
@@ -94,7 +94,7 @@ export default function ProgramOperatorView() {
         <AccordionItem value="item-7">
           <AccordionTrigger>Week 6</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthDayCard exercises={exercises} effort={0.95} />
               <CardioDayCard minutes={50} />
               <StrengthDayCard exercises={exercises} effort={0.95} />

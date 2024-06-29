@@ -172,7 +172,7 @@ export default function Program531BView() {
         <AccordionItem value="item-1">
           <AccordionTrigger>Week 1</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthFlexDayCard template="5/3/1" exercises={week1[0]} />
               <RestDayCard />
               <StrengthFlexDayCard template="5/3/1" exercises={week1[1]} />
@@ -186,7 +186,7 @@ export default function Program531BView() {
         <AccordionItem value="item-2">
           <AccordionTrigger>Week 2</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthFlexDayCard template="5/3/1" exercises={week2[0]} />
               <RestDayCard />
               <StrengthFlexDayCard template="5/3/1" exercises={week2[1]} />
@@ -200,7 +200,7 @@ export default function Program531BView() {
         <AccordionItem value="item-3">
           <AccordionTrigger>Week 3</AccordionTrigger>
           <AccordionContent>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
               <StrengthFlexDayCard template="5/3/1" exercises={week3[0]} />
               <RestDayCard />
               <StrengthFlexDayCard template="5/3/1" exercises={week3[1]} />
