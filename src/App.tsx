@@ -5,6 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { UserConfigProvider } from './contexts/UserConfigContext'
 import ProgramZuluHTView from './views/ProgramZuluHTView'
+import ProgramOperatorView from './views/ProgramOperatorView'
+import Program531BView from './views/Program531BView'
 
 
 function App() {
@@ -21,9 +23,17 @@ function App() {
           <Tabs defaultValue="zuluht" className="mb-4">
             <TabsList>
               <TabsTrigger value="zuluht">Zulu HT</TabsTrigger>
+              <TabsTrigger value="operator">Operator</TabsTrigger>
+              <TabsTrigger value="531b">5/3/1 Beginner</TabsTrigger>
             </TabsList>
             <TabsContent value="zuluht">
               <ProgramZuluHTView />
+            </TabsContent>
+            <TabsContent value="operator">
+              <ProgramOperatorView />
+            </TabsContent>
+            <TabsContent value="531b">
+              <Program531BView />
             </TabsContent>
           </Tabs>
         </main>
