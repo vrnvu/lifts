@@ -64,7 +64,7 @@ export function UserConfigProvider({ children }: { children: React.ReactNode }) 
   exercises.set(ExerciseType.BACK_SQUAT, useState<number>(110));
   exercises.set(ExerciseType.WEIGHTED_PULLUPS, useState<number>(116));
   exercises.set(ExerciseType.DL, useState<number>(120));
-  exercises.set(ExerciseType.OHP, useState<number>(60));
+  exercises.set(ExerciseType.OHP, useState<number>(70));
 
   const lastExercises = new Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>();
   lastExercises.set(ExerciseType.BENCH_PRESS, useState<number>(0));
