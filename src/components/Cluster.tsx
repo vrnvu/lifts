@@ -2,6 +2,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -16,6 +17,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { ExerciseType, UserConfig, toName, useUserConfig } from "@/contexts/UserConfigContext";
+import { Switch } from "./ui/switch";
 
 export default function Cluster() {
   const userConfig: UserConfig = useUserConfig();
@@ -92,6 +94,22 @@ export default function Cluster() {
               ))}
             </TableBody>
           </Table>
+          <CardFooter className="justify-center border-t p-4">
+            <div className="border p-4 rounded-md shadow-sm">
+              <div className="flex items-center justify-between">
+                <div className="mr-4">
+                  <h3 className="text-lg font-medium">90% TM</h3>
+                  <p className="text-sm text-gray-600">
+                    Enable this to use 90% of your 1RM as a training max
+                  </p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Switch id="airplane-mode" disabled={true} />
+                </div>
+              </div>
+            </div>
+          </CardFooter>
+
         </div>
       </CardContent >
     </Card >
