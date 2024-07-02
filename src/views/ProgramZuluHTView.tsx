@@ -30,11 +30,6 @@ export default function ProgramZuluHTView() {
           ["3x12", (wpu * 0.60).toFixed(1)],
         ]
       },
-      {
-        name: "Barbell rows", sets: [
-          ["3x12", "2 RIR"],
-        ]
-      },
     ],
     [
       {
@@ -49,11 +44,6 @@ export default function ProgramZuluHTView() {
       },
       {
         name: "RDL", sets: [
-          ["3x12", "2 RIR"],
-        ]
-      },
-      {
-        name: "Bulgarian glute", sets: [
           ["3x12", "2 RIR"],
         ]
       },
@@ -74,11 +64,6 @@ export default function ProgramZuluHTView() {
           ["3x12", (wpu * 0.60).toFixed(1)],
         ]
       },
-      {
-        name: "Barbell rows", sets: [
-          ["3x12", "2 RIR"],
-        ]
-      },
     ],
     [
       {
@@ -93,11 +78,6 @@ export default function ProgramZuluHTView() {
       },
       {
         name: "RDL", sets: [
-          ["3x12", "2 RIR"],
-        ]
-      },
-      {
-        name: "Bulgarian glute", sets: [
           ["3x12", "2 RIR"],
         ]
       },
@@ -121,11 +101,6 @@ export default function ProgramZuluHTView() {
           ["3x10", (wpu * 0.65).toFixed(1)],
         ]
       },
-      {
-        name: "Barbell rows", sets: [
-          ["3x10", "2 RIR"],
-        ]
-      },
     ],
     [
       {
@@ -140,11 +115,6 @@ export default function ProgramZuluHTView() {
       },
       {
         name: "RDL", sets: [
-          ["3x10", "2 RIR"],
-        ]
-      },
-      {
-        name: "Bulgarian glute", sets: [
           ["3x10", "2 RIR"],
         ]
       },
@@ -165,11 +135,6 @@ export default function ProgramZuluHTView() {
           ["3x10", (wpu * 0.65).toFixed(1)],
         ]
       },
-      {
-        name: "Barbell rows", sets: [
-          ["3x10", "2 RIR"],
-        ]
-      },
     ],
     [
       {
@@ -184,11 +149,6 @@ export default function ProgramZuluHTView() {
       },
       {
         name: "RDL", sets: [
-          ["3x10", "2 RIR"],
-        ]
-      },
-      {
-        name: "Bulgarian glute", sets: [
           ["3x10", "2 RIR"],
         ]
       },
@@ -212,11 +172,6 @@ export default function ProgramZuluHTView() {
           ["3x8", (wpu * 0.70).toFixed(1)],
         ]
       },
-      {
-        name: "Barbell rows", sets: [
-          ["3x8", "2 RIR"],
-        ]
-      },
     ],
     [
       {
@@ -231,11 +186,6 @@ export default function ProgramZuluHTView() {
       },
       {
         name: "RDL", sets: [
-          ["3x8", "2 RIR"],
-        ]
-      },
-      {
-        name: "Bulgarian glute", sets: [
           ["3x8", "2 RIR"],
         ]
       },
@@ -256,11 +206,6 @@ export default function ProgramZuluHTView() {
           ["3x8", (wpu * 0.70).toFixed(1)],
         ]
       },
-      {
-        name: "Barbell rows", sets: [
-          ["3x8", "2 RIR"],
-        ]
-      },
     ],
     [
       {
@@ -275,11 +220,6 @@ export default function ProgramZuluHTView() {
       },
       {
         name: "RDL", sets: [
-          ["3x8", "2 RIR"],
-        ]
-      },
-      {
-        name: "Bulgarian glute", sets: [
           ["3x8", "2 RIR"],
         ]
       },
