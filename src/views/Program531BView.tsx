@@ -2,14 +2,14 @@ import Cluster from "@/components/Cluster";
 import RestDayCard from "@/components/RestDayCard";
 import StrengthFlexDayCard, { StrengthFlexExercise } from "@/components/StrengthFlexDayCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ExerciseType, UserConfig, getWeight, toName, useUserConfig } from "@/contexts/UserConfigContext";
+import { ExerciseType, UserConfig, getWeightTm, toName, useUserConfig } from "@/contexts/UserConfigContext";
 
 export default function Program531BView() {
   const userConfig: UserConfig = useUserConfig();
-  const benchPress = getWeight(userConfig, ExerciseType.BENCH_PRESS);
-  const backSquat = getWeight(userConfig, ExerciseType.BACK_SQUAT);
-  const dl = getWeight(userConfig, ExerciseType.DL);
-  const ohp = getWeight(userConfig, ExerciseType.OHP);
+  const benchPress = getWeightTm(userConfig, ExerciseType.BENCH_PRESS);
+  const backSquat = getWeightTm(userConfig, ExerciseType.BACK_SQUAT);
+  const dl = getWeightTm(userConfig, ExerciseType.DL);
+  const ohp = getWeightTm(userConfig, ExerciseType.OHP);
 
   const week1: StrengthFlexExercise[][] = [
     [

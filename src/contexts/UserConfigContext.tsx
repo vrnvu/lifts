@@ -28,6 +28,7 @@ export function toName(exercise: ExerciseType) {
 
 export interface UserConfig {
   exercises: Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>;
+  use90tm: [boolean, Dispatch<SetStateAction<boolean>>];
   lastExercises: Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>;
 }
 
@@ -45,6 +46,11 @@ export function getWeight(userConfig: UserConfig, exercise: ExerciseType): numbe
 
 export function getWeightLast(userConfig: UserConfig, exercise: ExerciseType): number {
   return userConfig.lastExercises.get(exercise)![0];
+}
+
+export function getWeightTm(userConfig: UserConfig, exercise: ExerciseType): number {
+  const tm = userConfig.use90tm[0] ? 0.9 : 1;
+  return userConfig.exercises.get(exercise)![0] * tm;
 }
 
 const UserConfigContext = createContext<UserConfig | undefined>(undefined);
@@ -73,8 +79,11 @@ export function UserConfigProvider({ children }: { children: React.ReactNode }) 
   lastExercises.set(ExerciseType.DL, useState<number>(0));
   lastExercises.set(ExerciseType.OHP, useState<number>(0));
 
+  const use90tm = useState<boolean>(false);
+
   const userConfig: UserConfig = {
     exercises,
+    use90tm,
     lastExercises,
   };
 

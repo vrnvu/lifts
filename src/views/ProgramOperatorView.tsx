@@ -4,16 +4,16 @@ import RestDayCard from "@/components/RestDayCard";
 import StrengthDayCard, { StrengthExercise } from "@/components/StrengthDayCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-import { ExerciseType, UserConfig, getWeight, useUserConfig } from "@/contexts/UserConfigContext";
+import { ExerciseType, UserConfig, getWeightTm, useUserConfig } from "@/contexts/UserConfigContext";
 import Cluster from "@/components/Cluster";
 
 export default function ProgramOperatorView() {
   const userConfig: UserConfig = useUserConfig();
 
   const exercises: StrengthExercise[] = [
-    { name: "Bench press", sets: "3x5", weight: getWeight(userConfig, ExerciseType.BENCH_PRESS) },
-    { name: "Back squat", sets: "3x5", weight: getWeight(userConfig, ExerciseType.BACK_SQUAT) },
-    { name: "Weighted pullups", sets: "3x5", weight: getWeight(userConfig, ExerciseType.WEIGHTED_PULLUPS) }
+    { name: "Bench press", sets: "3x5", weight: getWeightTm(userConfig, ExerciseType.BENCH_PRESS) },
+    { name: "Back squat", sets: "3x5", weight: getWeightTm(userConfig, ExerciseType.BACK_SQUAT) },
+    { name: "Weighted pullups", sets: "3x5", weight: getWeightTm(userConfig, ExerciseType.WEIGHTED_PULLUPS) }
   ];
 
   const weekIds = ["item-1", "item-2", "item-3", "item-4", "item-5", "item-6"];
