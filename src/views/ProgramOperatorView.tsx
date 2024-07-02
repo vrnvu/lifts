@@ -44,7 +44,7 @@ export default function ProgramOperatorView() {
               <StrengthDayCard exercises={exercises} sets="3x5" effort={0.8} />
               <CardioDayCard minutes={50} />
               <StrengthDayCard exercises={exercises} sets="3x5" effort={0.8} />
-              <EnduranceDayCard minutes={70} />
+              <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
           </AccordionContent>
@@ -58,7 +58,7 @@ export default function ProgramOperatorView() {
               <StrengthDayCard exercises={exercises} sets="3x2" effort={0.9} />
               <CardioDayCard minutes={60} />
               <StrengthDayCard exercises={exercises} sets="3x2" effort={0.9} />
-              <EnduranceDayCard minutes={80} />
+              <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
           </AccordionContent>
@@ -72,7 +72,7 @@ export default function ProgramOperatorView() {
               <StrengthDayCard exercises={exercises} sets="3x5" effort={0.75} />
               <CardioDayCard minutes={70} />
               <StrengthDayCard exercises={exercises} sets="3x5" effort={0.75} />
-              <EnduranceDayCard minutes={90} />
+              <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
           </AccordionContent>
@@ -86,7 +86,7 @@ export default function ProgramOperatorView() {
               <StrengthDayCard exercises={exercises} sets="3x5" effort={0.85} />
               <CardioDayCard minutes={80} />
               <StrengthDayCard exercises={exercises} sets="3x5" effort={0.85} />
-              <EnduranceDayCard minutes={100} />
+              <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
           </AccordionContent>
@@ -100,7 +100,7 @@ export default function ProgramOperatorView() {
               <StrengthDayCard exercises={exercises} sets="3x2" effort={0.95} />
               <CardioDayCard minutes={50} />
               <StrengthDayCard exercises={exercises} sets="3x2" effort={0.95} />
-              <EnduranceDayCard minutes={80} />
+              <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
           </AccordionContent>

@@ -2,11 +2,11 @@ import React, { Dispatch, SetStateAction } from "react";
 import { createContext, useState } from "react";
 
 export enum ExerciseType {
-  BENCH_PRESS,
-  BACK_SQUAT,
-  WEIGHTED_PULLUPS,
-  DL,
-  OHP,
+  BENCH_PRESS = 'BENCH_PRESS',
+  BACK_SQUAT = 'BACK_SQUAT',
+  WEIGHTED_PULLUPS = 'WEIGHTED_PULLUPS',
+  DL = 'DL',
+  OHP = 'OHP',
 }
 
 export function toName(exercise: ExerciseType) {
@@ -26,31 +26,34 @@ export function toName(exercise: ExerciseType) {
   }
 }
 
+type ExerciseState = [number, Dispatch<SetStateAction<number>>];
+type Use90tmState = [boolean, Dispatch<SetStateAction<boolean>>];
+
+interface UserCurrentExercisesState {
+  BENCH_PRESS: ExerciseState;
+  BACK_SQUAT: ExerciseState;
+  WEIGHTED_PULLUPS: ExerciseState;
+  DL: ExerciseState;
+  OHP: ExerciseState;
+}
+
+type UserLastExercisesState = {
+  [key in ExerciseType]: ExerciseState;
+}
+
 export interface UserConfig {
-  exercises: Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>;
-  use90tm: [boolean, Dispatch<SetStateAction<boolean>>];
-  lastExercises: Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>;
-}
-
-export function updateWeight(userConfig: UserConfig, exercise: ExerciseType): Dispatch<SetStateAction<number>> {
-  return userConfig.exercises.get(exercise)![1];
-}
-
-export function updateLastWeight(userConfig: UserConfig, exercise: ExerciseType): Dispatch<SetStateAction<number>> {
-  return userConfig.lastExercises.get(exercise)![1];
+  exercises: UserCurrentExercisesState;
+  lastExercises: UserLastExercisesState;
+  use90tm: Use90tmState;
 }
 
 export function getWeight(userConfig: UserConfig, exercise: ExerciseType): number {
-  return userConfig.exercises.get(exercise)![0];
-}
-
-export function getWeightLast(userConfig: UserConfig, exercise: ExerciseType): number {
-  return userConfig.lastExercises.get(exercise)![0];
+  return userConfig.exercises[exercise][0];
 }
 
 export function getWeightTm(userConfig: UserConfig, exercise: ExerciseType): number {
   const tm = userConfig.use90tm[0] ? 0.9 : 1;
-  return userConfig.exercises.get(exercise)![0] * tm;
+  return getWeight(userConfig, exercise) * tm;
 }
 
 const UserConfigContext = createContext<UserConfig | undefined>(undefined);
@@ -64,22 +67,28 @@ export const useUserConfig: () => UserConfig = () => {
   return userConfig;
 }
 
+const initializeExercises = (): UserCurrentExercisesState => ({
+  [ExerciseType.BENCH_PRESS]: useState<number>(103),
+  [ExerciseType.BACK_SQUAT]: useState<number>(110),
+  [ExerciseType.WEIGHTED_PULLUPS]: useState<number>(116),
+  [ExerciseType.DL]: useState<number>(120),
+  [ExerciseType.OHP]: useState<number>(70),
+});
+
+const initializeLastExercises = (): UserCurrentExercisesState => ({
+  [ExerciseType.BENCH_PRESS]: useState<number>(103),
+  [ExerciseType.BACK_SQUAT]: useState<number>(110),
+  [ExerciseType.WEIGHTED_PULLUPS]: useState<number>(116),
+  [ExerciseType.DL]: useState<number>(120),
+  [ExerciseType.OHP]: useState<number>(70),
+});
+
+const initializeUse90tm = (): Use90tmState => useState<boolean>(false);
+
 export function UserConfigProvider({ children }: { children: React.ReactNode }) {
-  const exercises = new Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>();
-  exercises.set(ExerciseType.BENCH_PRESS, useState<number>(103));
-  exercises.set(ExerciseType.BACK_SQUAT, useState<number>(110));
-  exercises.set(ExerciseType.WEIGHTED_PULLUPS, useState<number>(116));
-  exercises.set(ExerciseType.DL, useState<number>(120));
-  exercises.set(ExerciseType.OHP, useState<number>(70));
-
-  const lastExercises = new Map<ExerciseType, [number, Dispatch<SetStateAction<number>>]>();
-  lastExercises.set(ExerciseType.BENCH_PRESS, useState<number>(0));
-  lastExercises.set(ExerciseType.BACK_SQUAT, useState<number>(0));
-  lastExercises.set(ExerciseType.WEIGHTED_PULLUPS, useState<number>(0));
-  lastExercises.set(ExerciseType.DL, useState<number>(0));
-  lastExercises.set(ExerciseType.OHP, useState<number>(0));
-
-  const use90tm = useState<boolean>(false);
+  const exercises = initializeExercises();
+  const lastExercises = initializeLastExercises();
+  const use90tm = initializeUse90tm();
 
   const userConfig: UserConfig = {
     exercises,

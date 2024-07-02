@@ -25,17 +25,17 @@ export default function Benchmark() {
 	const userConfig: UserConfig = useUserConfig();
 
 
-	const [benchPress, setBenchPress] = userConfig.exercises.get(ExerciseType.BENCH_PRESS)!;
-	const [backSquat, setBackSquat] = userConfig.exercises.get(ExerciseType.BACK_SQUAT)!;
-	const [weightedPullups, setWeightedPullups] = userConfig.exercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
-	const [dl, setDL] = userConfig.exercises.get(ExerciseType.DL)!;
-	const [ohp, setOHP] = userConfig.exercises.get(ExerciseType.OHP)!;
+	const [benchPress, setBenchPress] = userConfig.exercises[ExerciseType.BENCH_PRESS];
+	const [backSquat, setBackSquat] = userConfig.exercises[ExerciseType.BACK_SQUAT];
+	const [weightedPullups, setWeightedPullups] = userConfig.exercises[ExerciseType.WEIGHTED_PULLUPS];
+	const [dl, setDL] = userConfig.exercises[ExerciseType.DL];
+	const [ohp, setOHP] = userConfig.exercises[ExerciseType.OHP];
 
-	const [lastBenchPress, setLastBenchPress] = userConfig.lastExercises.get(ExerciseType.BENCH_PRESS)!;
-	const [lastBackSquat, setLastBackSquat] = userConfig.lastExercises.get(ExerciseType.BACK_SQUAT)!;
-	const [lastWeightedPullups, setLastWeightedPullups] = userConfig.lastExercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
-	const [lastDL, setLastDL] = userConfig.lastExercises.get(ExerciseType.DL)!;
-	const [lastOHP, setLastOHP] = userConfig.lastExercises.get(ExerciseType.OHP)!;
+	const [lastBenchPress, setLastBenchPress] = userConfig.lastExercises[ExerciseType.BENCH_PRESS];
+	const [lastBackSquat, setLastBackSquat] = userConfig.lastExercises[ExerciseType.BACK_SQUAT];
+	const [lastWeightedPullups, setLastWeightedPullups] = userConfig.lastExercises[ExerciseType.WEIGHTED_PULLUPS];
+	const [lastDL, setLastDL] = userConfig.lastExercises[ExerciseType.DL];
+	const [lastOHP, setLastOHP] = userConfig.lastExercises[ExerciseType.OHP];
 
 	const exercises = [
 		{

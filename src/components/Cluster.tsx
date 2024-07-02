@@ -23,11 +23,11 @@ export default function Cluster() {
   const userConfig: UserConfig = useUserConfig();
   const [use90tm, setUse90tm] = userConfig.use90tm;
 
-  const [benchPress, setBenchPress] = userConfig.exercises.get(ExerciseType.BENCH_PRESS)!;
-  const [backSquat, setBackSquat] = userConfig.exercises.get(ExerciseType.BACK_SQUAT)!;
-  const [weightedPullups, setWeightedPullups] = userConfig.exercises.get(ExerciseType.WEIGHTED_PULLUPS)!;
-  const [dl, setDL] = userConfig.exercises.get(ExerciseType.DL)!;
-  const [ohp, setOHP] = userConfig.exercises.get(ExerciseType.OHP)!;
+  const [benchPress, setBenchPress] = userConfig.exercises[ExerciseType.BENCH_PRESS];
+  const [backSquat, setBackSquat] = userConfig.exercises[ExerciseType.BACK_SQUAT];
+  const [weightedPullups, setWeightedPullups] = userConfig.exercises[ExerciseType.WEIGHTED_PULLUPS];
+  const [dl, setDL] = userConfig.exercises[ExerciseType.DL];
+  const [ohp, setOHP] = userConfig.exercises[ExerciseType.OHP];
 
   const exercises = [
     {
