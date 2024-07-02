@@ -21,7 +21,7 @@ import { Switch } from "./ui/switch";
 
 export default function Cluster() {
   const userConfig: UserConfig = useUserConfig();
-  const [_, setUse90tm] = userConfig.use90tm;
+  const [use90tm, setUse90tm] = userConfig.use90tm;
 
   const [benchPress, setBenchPress] = userConfig.exercises.get(ExerciseType.BENCH_PRESS)!;
   const [backSquat, setBackSquat] = userConfig.exercises.get(ExerciseType.BACK_SQUAT)!;
@@ -104,7 +104,7 @@ export default function Cluster() {
                   </p>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <Switch id="switch-use90tm" onCheckedChange={v => setUse90tm(v)} />
+                  <Switch id="switch-use90tm" checked={use90tm} onCheckedChange={v => setUse90tm(v)} />
                 </div>
               </div>
             </div>
