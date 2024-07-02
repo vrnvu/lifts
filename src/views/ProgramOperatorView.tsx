@@ -11,9 +11,9 @@ export default function ProgramOperatorView() {
   const userConfig: UserConfig = useUserConfig();
 
   const exercises: StrengthExercise[] = [
-    { name: "Bench press", sets: "3x5", weight: getWeightTm(userConfig, ExerciseType.BENCH_PRESS) },
-    { name: "Back squat", sets: "3x5", weight: getWeightTm(userConfig, ExerciseType.BACK_SQUAT) },
-    { name: "Weighted pullups", sets: "3x5", weight: getWeightTm(userConfig, ExerciseType.WEIGHTED_PULLUPS) }
+    { name: "Bench press", weight: getWeightTm(userConfig, ExerciseType.BENCH_PRESS) },
+    { name: "Back squat", weight: getWeightTm(userConfig, ExerciseType.BACK_SQUAT) },
+    { name: "Weighted pullups", weight: getWeightTm(userConfig, ExerciseType.WEIGHTED_PULLUPS) }
   ];
 
   const weekIds = ["item-1", "item-2", "item-3", "item-4", "item-5", "item-6"];
@@ -25,11 +25,11 @@ export default function ProgramOperatorView() {
           <AccordionTrigger>Week 1</AccordionTrigger>
           <AccordionContent>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
-              <StrengthDayCard exercises={exercises} effort={0.7} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.7} />
               <CardioDayCard minutes={30} />
-              <StrengthDayCard exercises={exercises} effort={0.7} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.7} />
               <CardioDayCard minutes={40} />
-              <StrengthDayCard exercises={exercises} effort={0.7} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.7} />
               <EnduranceDayCard minutes={60} />
               <RestDayCard />
             </div>
@@ -39,11 +39,11 @@ export default function ProgramOperatorView() {
           <AccordionTrigger>Week 2</AccordionTrigger>
           <AccordionContent>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
-              <StrengthDayCard exercises={exercises} effort={0.8} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.8} />
               <CardioDayCard minutes={40} />
-              <StrengthDayCard exercises={exercises} effort={0.8} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.8} />
               <CardioDayCard minutes={50} />
-              <StrengthDayCard exercises={exercises} effort={0.8} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.8} />
               <EnduranceDayCard minutes={70} />
               <RestDayCard />
             </div>
@@ -53,11 +53,11 @@ export default function ProgramOperatorView() {
           <AccordionTrigger>Week 3</AccordionTrigger>
           <AccordionContent>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
-              <StrengthDayCard exercises={exercises} effort={0.9} />
+              <StrengthDayCard exercises={exercises} sets="3x2" effort={0.9} />
               <CardioDayCard minutes={50} />
-              <StrengthDayCard exercises={exercises} effort={0.9} />
+              <StrengthDayCard exercises={exercises} sets="3x2" effort={0.9} />
               <CardioDayCard minutes={60} />
-              <StrengthDayCard exercises={exercises} effort={0.9} />
+              <StrengthDayCard exercises={exercises} sets="3x2" effort={0.9} />
               <EnduranceDayCard minutes={80} />
               <RestDayCard />
             </div>
@@ -67,11 +67,11 @@ export default function ProgramOperatorView() {
           <AccordionTrigger>Week 4</AccordionTrigger>
           <AccordionContent>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
-              <StrengthDayCard exercises={exercises} effort={0.75} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.75} />
               <CardioDayCard minutes={60} />
-              <StrengthDayCard exercises={exercises} effort={0.75} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.75} />
               <CardioDayCard minutes={70} />
-              <StrengthDayCard exercises={exercises} effort={0.75} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.75} />
               <EnduranceDayCard minutes={90} />
               <RestDayCard />
             </div>
@@ -81,11 +81,11 @@ export default function ProgramOperatorView() {
           <AccordionTrigger>Week 5</AccordionTrigger>
           <AccordionContent>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
-              <StrengthDayCard exercises={exercises} effort={0.85} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.85} />
               <CardioDayCard minutes={70} />
-              <StrengthDayCard exercises={exercises} effort={0.85} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.85} />
               <CardioDayCard minutes={80} />
-              <StrengthDayCard exercises={exercises} effort={0.85} />
+              <StrengthDayCard exercises={exercises} sets="3x5" effort={0.85} />
               <EnduranceDayCard minutes={100} />
               <RestDayCard />
             </div>
@@ -95,11 +95,11 @@ export default function ProgramOperatorView() {
           <AccordionTrigger>Week 6</AccordionTrigger>
           <AccordionContent>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
-              <StrengthDayCard exercises={exercises} effort={0.95} />
+              <StrengthDayCard exercises={exercises} sets="3x2" effort={0.95} />
               <CardioDayCard minutes={50} />
-              <StrengthDayCard exercises={exercises} effort={0.95} />
+              <StrengthDayCard exercises={exercises} sets="3x2" effort={0.95} />
               <CardioDayCard minutes={50} />
-              <StrengthDayCard exercises={exercises} effort={0.95} />
+              <StrengthDayCard exercises={exercises} sets="3x2" effort={0.95} />
               <EnduranceDayCard minutes={80} />
               <RestDayCard />
             </div>

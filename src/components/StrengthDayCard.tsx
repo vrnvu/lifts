@@ -9,16 +9,16 @@ import {
 
 export interface StrengthExercise {
   name: string;
-  sets: string;
   weight: number;
 }
 
 export interface StrengthDayCardProps {
   exercises: StrengthExercise[];
+  sets: string;
   effort: number;
 }
 
-export default function StrengthDayCard({ exercises, effort }: StrengthDayCardProps) {
+export default function StrengthDayCard({ exercises, sets, effort }: StrengthDayCardProps) {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-2 pb-2">
@@ -32,7 +32,7 @@ export default function StrengthDayCard({ exercises, effort }: StrengthDayCardPr
             <div key={index}>
               <div>{exercise.name}</div>
               <div>
-                {exercise.sets} @ {(exercise.weight * effort).toFixed(1)} kg
+                {sets} @ {(exercise.weight * effort).toFixed(1)} kg
               </div>
             </div>
           ))}
