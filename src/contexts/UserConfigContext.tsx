@@ -51,6 +51,11 @@ export function getWeight(userConfig: UserConfig, exercise: ExerciseType): numbe
   return userConfig.exercises[exercise][0];
 }
 
+export function getWeightLast(userConfig: UserConfig, exercise: ExerciseType): number {
+  return userConfig.lastExercises[exercise][0];
+}
+
+
 export function getWeightTm(userConfig: UserConfig, exercise: ExerciseType): number {
   const tm = userConfig.use90tm[0] ? 0.9 : 1;
   return getWeight(userConfig, exercise) * tm;
