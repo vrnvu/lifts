@@ -88,7 +88,7 @@ const initializeLastExercises = (): UserCurrentExercisesState => ({
   [ExerciseType.OHP]: useState<number>(70),
 });
 
-const initializeUse90tm = (): Use90tmState => useState<boolean>(false);
+const initializeUse90tm = (): Use90tmState => useState<boolean>(true);
 
 export function UserConfigProvider({ children }: { children: React.ReactNode }) {
   const exercises = initializeExercises();
