@@ -56,7 +56,7 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.OHP), sets: [
-          ["4x10", (benchPress * 0.65).toFixed(1)],
+          ["4x10", (ohp * 0.65).toFixed(1)],
         ]
       },
       {
@@ -127,7 +127,7 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.OHP), sets: [
-          ["4x8", (benchPress * 0.70).toFixed(1)],
+          ["4x8", (ohp * 0.70).toFixed(1)],
         ]
       },
       {
@@ -198,7 +198,7 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.OHP), sets: [
-          ["4x6", (benchPress * 0.75).toFixed(1)],
+          ["4x6", (ohp * 0.75).toFixed(1)],
         ]
       },
       {
