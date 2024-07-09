@@ -43,7 +43,7 @@ export default function ProgramZuluHTView() {
         ]
       },
       {
-        name: "RDL", sets: [
+        name: "abs & neck", sets: [
           ["3x12", "2 RIR"],
         ]
       },
@@ -77,7 +77,7 @@ export default function ProgramZuluHTView() {
         ]
       },
       {
-        name: "RDL", sets: [
+        name: "abs & neck", sets: [
           ["3x12", "2 RIR"],
         ]
       },
@@ -114,7 +114,7 @@ export default function ProgramZuluHTView() {
         ]
       },
       {
-        name: "RDL", sets: [
+        name: "abs & neck", sets: [
           ["3x10", "2 RIR"],
         ]
       },
@@ -148,7 +148,7 @@ export default function ProgramZuluHTView() {
         ]
       },
       {
-        name: "RDL", sets: [
+        name: "abs & neck", sets: [
           ["3x10", "2 RIR"],
         ]
       },
@@ -185,7 +185,7 @@ export default function ProgramZuluHTView() {
         ]
       },
       {
-        name: "RDL", sets: [
+        name: "abs & neck", sets: [
           ["3x8", "2 RIR"],
         ]
       },
@@ -219,7 +219,7 @@ export default function ProgramZuluHTView() {
         ]
       },
       {
-        name: "RDL", sets: [
+        name: "abs & neck", sets: [
           ["3x8", "2 RIR"],
         ]
       },
