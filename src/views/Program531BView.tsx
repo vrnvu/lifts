@@ -1,6 +1,6 @@
 import Cluster from "@/components/Cluster";
 import RestDayCard from "@/components/RestDayCard";
-import StrengthFlexDayCard, { StrengthFlexExercise } from "@/components/StrengthFlexDayCard";
+import StrengthFlexDayCard, { ProgressionType, StrengthFlexExercise } from "@/components/StrengthFlexDayCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ExerciseType, UserConfig, getWeightTm, toName, useUserConfig } from "@/contexts/UserConfigContext";
 
@@ -18,14 +18,14 @@ export default function Program531BView() {
           ["5", (backSquat * 0.65).toFixed(1)],
           ["5", (backSquat * 0.75).toFixed(1)],
           ["5+", (backSquat * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["5", (benchPress * 0.65).toFixed(1)],
           ["5", (benchPress * 0.75).toFixed(1)],
           ["5+", (benchPress * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
     [
@@ -34,14 +34,14 @@ export default function Program531BView() {
           ["5", (dl * 0.65).toFixed(1)],
           ["5", (dl * 0.75).toFixed(1)],
           ["5+", (dl * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.OHP), sets: [
           ["5", (ohp * 0.65).toFixed(1)],
           ["5", (ohp * 0.75).toFixed(1)],
           ["5+", (ohp * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
     [
@@ -50,14 +50,14 @@ export default function Program531BView() {
           ["5", (backSquat * 0.65).toFixed(1)],
           ["5", (backSquat * 0.75).toFixed(1)],
           ["5+", (backSquat * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["5", (benchPress * 0.65).toFixed(1)],
           ["5", (benchPress * 0.75).toFixed(1)],
           ["5+", (benchPress * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
   ];
@@ -69,14 +69,14 @@ export default function Program531BView() {
           ["3", (backSquat * 0.70).toFixed(1)],
           ["3", (backSquat * 0.80).toFixed(1)],
           ["3+", (backSquat * 0.90).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["3", (benchPress * 0.70).toFixed(1)],
           ["3", (benchPress * 0.80).toFixed(1)],
           ["3+", (benchPress * 0.90).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
     [
@@ -85,14 +85,14 @@ export default function Program531BView() {
           ["3", (dl * 0.70).toFixed(1)],
           ["3", (dl * 0.80).toFixed(1)],
           ["3+", (dl * 0.90).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.OHP), sets: [
           ["3", (ohp * 0.70).toFixed(1)],
           ["3", (ohp * 0.80).toFixed(1)],
           ["3+", (ohp * 0.90).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
     [
@@ -101,14 +101,14 @@ export default function Program531BView() {
           ["3", (backSquat * 0.70).toFixed(1)],
           ["3", (backSquat * 0.80).toFixed(1)],
           ["3+", (backSquat * 0.90).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["3", (benchPress * 0.70).toFixed(1)],
           ["3", (benchPress * 0.80).toFixed(1)],
           ["3+", (benchPress * 0.90).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
   ];
@@ -120,14 +120,14 @@ export default function Program531BView() {
           ["5", (backSquat * 0.75).toFixed(1)],
           ["3", (backSquat * 0.85).toFixed(1)],
           ["1+", (backSquat * 0.95).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["5", (benchPress * 0.75).toFixed(1)],
           ["3", (benchPress * 0.85).toFixed(1)],
           ["1+", (benchPress * 0.95).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
     [
@@ -136,14 +136,14 @@ export default function Program531BView() {
           ["5", (dl * 0.75).toFixed(1)],
           ["3", (dl * 0.85).toFixed(1)],
           ["1+", (dl * 0.95).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.OHP), sets: [
           ["5", (ohp * 0.75).toFixed(1)],
           ["3", (ohp * 0.85).toFixed(1)],
           ["1+", (ohp * 0.95).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
     [
@@ -152,14 +152,14 @@ export default function Program531BView() {
           ["5", (backSquat * 0.75).toFixed(1)],
           ["3", (backSquat * 0.85).toFixed(1)],
           ["1+", (backSquat * 0.95).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["5", (benchPress * 0.75).toFixed(1)],
           ["3", (benchPress * 0.85).toFixed(1)],
           ["1+", (benchPress * 0.95).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       }
     ],
   ];

@@ -7,9 +7,15 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+export enum ProgressionType {
+  KG = "kg",
+  RIR = "RIR"
+}
+
 export interface StrengthFlexExercise {
   name: string;
   sets: [string, string][];
+  progressionType: ProgressionType;
 }
 
 export interface StrengthFlexDayCardProps {
@@ -33,7 +39,7 @@ export default function StrengthFlexDayCard({ template, exercises }: StrengthFle
               {exercise.sets.map(set =>
               (
                 <div>
-                  {set[0]} @ {set[1]} kg
+                  {set[0]} @ {set[1]} {exercise.progressionType}
                 </div>
               )
               )}

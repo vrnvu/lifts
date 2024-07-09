@@ -1,6 +1,6 @@
 import Cluster from "@/components/Cluster";
 import RestDayCard from "@/components/RestDayCard";
-import StrengthFlexDayCard, { StrengthFlexExercise } from "@/components/StrengthFlexDayCard";
+import StrengthFlexDayCard, { ProgressionType, StrengthFlexExercise } from "@/components/StrengthFlexDayCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 import { ExerciseType, UserConfig, getWeightTm, toName, useUserConfig } from "@/contexts/UserConfigContext";
@@ -18,68 +18,68 @@ export default function ProgramZuluHTView() {
       {
         name: toName(ExerciseType.OHP), sets: [
           ["4x5", (ohp * 0.75).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BACK_SQUAT), sets: [
           ["4x10", (backSquat * 0.65).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
-          ["3x12", (wpu * 0.60).toFixed(1)],
-        ]
+          ["3x12", "2"],
+        ], progressionType: ProgressionType.RIR
       },
     ],
     [
       {
         name: toName(ExerciseType.DL), sets: [
           ["4x5", (dl * 0.75).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["4x10", (benchPress * 0.65).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: "abs & neck", sets: [
-          ["3x12", "2 RIR"],
-        ]
+          ["3x12", "2"],
+        ], progressionType: ProgressionType.RIR
       },
     ],
     [
       {
         name: toName(ExerciseType.BACK_SQUAT), sets: [
           ["4x5", (backSquat * 0.75).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.OHP), sets: [
           ["4x10", (ohp * 0.65).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
-          ["3x12", (wpu * 0.60).toFixed(1)],
-        ]
+          ["3x12", "2"],
+        ], progressionType: ProgressionType.RIR
       },
     ],
     [
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["4x5", (benchPress * 0.75).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.DL), sets: [
           ["4x10", (dl * 0.65).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: "abs & neck", sets: [
-          ["3x12", "2 RIR"],
-        ]
+          ["3x12", "2"],
+        ], progressionType: ProgressionType.RIR
       },
     ]
   ];
@@ -89,68 +89,68 @@ export default function ProgramZuluHTView() {
       {
         name: toName(ExerciseType.OHP), sets: [
           ["4x4", (ohp * 0.80).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BACK_SQUAT), sets: [
           ["4x8", (backSquat * 0.70).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
           ["3x10", (wpu * 0.65).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
     ],
     [
       {
         name: toName(ExerciseType.DL), sets: [
           ["4x4", (dl * 0.80).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["4x8", (benchPress * 0.70).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: "abs & neck", sets: [
-          ["3x10", "2 RIR"],
-        ]
+          ["3x10", "2"],
+        ], progressionType: ProgressionType.KG
       },
     ],
     [
       {
         name: toName(ExerciseType.BACK_SQUAT), sets: [
           ["4x4", (backSquat * 0.80).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.OHP), sets: [
           ["4x8", (ohp * 0.70).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
           ["3x10", (wpu * 0.65).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
     ],
     [
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["4x4", (benchPress * 0.80).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.DL), sets: [
           ["4x8", (dl * 0.70).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: "abs & neck", sets: [
-          ["3x10", "2 RIR"],
-        ]
+          ["3x10", "2"],
+        ], progressionType: ProgressionType.KG
       },
     ]
   ];
@@ -160,68 +160,68 @@ export default function ProgramZuluHTView() {
       {
         name: toName(ExerciseType.OHP), sets: [
           ["4x3+", (ohp * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BACK_SQUAT), sets: [
           ["4x6", (backSquat * 0.75).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
           ["3x8", (wpu * 0.70).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
     ],
     [
       {
         name: toName(ExerciseType.DL), sets: [
           ["4x3+", (dl * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["4x6", (benchPress * 0.75).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: "abs & neck", sets: [
-          ["3x8", "2 RIR"],
-        ]
+          ["3x8", "2"],
+        ], progressionType: ProgressionType.KG
       },
     ],
     [
       {
         name: toName(ExerciseType.BACK_SQUAT), sets: [
           ["4x3+", (backSquat * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.OHP), sets: [
           ["4x6", (ohp * 0.75).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
           ["3x8", (wpu * 0.70).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
     ],
     [
       {
         name: toName(ExerciseType.BENCH_PRESS), sets: [
           ["4x3+", (benchPress * 0.85).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: toName(ExerciseType.DL), sets: [
           ["4x6", (dl * 0.75).toFixed(1)],
-        ]
+        ], progressionType: ProgressionType.KG
       },
       {
         name: "abs & neck", sets: [
-          ["3x8", "2 RIR"],
-        ]
+          ["3x8", "2"],
+        ], progressionType: ProgressionType.RIR
       },
     ]
   ];
