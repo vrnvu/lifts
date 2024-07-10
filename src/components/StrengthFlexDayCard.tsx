@@ -9,6 +9,7 @@ import {
 
 export enum ProgressionType {
   KG = "kg",
+  REPS = "reps",
   RIR = "RIR"
 }
 

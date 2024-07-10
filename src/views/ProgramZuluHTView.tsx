@@ -27,8 +27,8 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
-          ["3x12", "2"],
-        ], progressionType: ProgressionType.RIR
+          ["3x12", "12"],
+        ], progressionType: ProgressionType.REPS
       },
     ],
     [
@@ -44,8 +44,8 @@ export default function ProgramZuluHTView() {
       },
       {
         name: "abs & neck", sets: [
-          ["3x12", "2"],
-        ], progressionType: ProgressionType.RIR
+          ["3x12", "12"],
+        ], progressionType: ProgressionType.REPS
       },
     ],
     [
@@ -61,8 +61,8 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
-          ["3x12", "2"],
-        ], progressionType: ProgressionType.RIR
+          ["3x12", "12"],
+        ], progressionType: ProgressionType.REPS
       },
     ],
     [
@@ -78,8 +78,8 @@ export default function ProgramZuluHTView() {
       },
       {
         name: "abs & neck", sets: [
-          ["3x12", "2"],
-        ], progressionType: ProgressionType.RIR
+          ["3x12", "12"],
+        ], progressionType: ProgressionType.REPS
       },
     ]
   ];
@@ -221,7 +221,7 @@ export default function ProgramZuluHTView() {
       {
         name: "abs & neck", sets: [
           ["3x8", "2"],
-        ], progressionType: ProgressionType.RIR
+        ], progressionType: ProgressionType.REPS
       },
     ]
   ];
