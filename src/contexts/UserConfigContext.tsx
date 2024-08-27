@@ -73,16 +73,16 @@ export const useUserConfig: () => UserConfig = () => {
 }
 
 const initializeExercises = (): UserCurrentExercisesState => ({
-  [ExerciseType.BENCH_PRESS]: useState<number>(103),
-  [ExerciseType.BACK_SQUAT]: useState<number>(110),
+  [ExerciseType.BENCH_PRESS]: useState<number>(105),
+  [ExerciseType.BACK_SQUAT]: useState<number>(120),
   [ExerciseType.WEIGHTED_PULLUPS]: useState<number>(116),
   [ExerciseType.DL]: useState<number>(150),
   [ExerciseType.OHP]: useState<number>(70),
 });
 
 const initializeLastExercises = (): UserCurrentExercisesState => ({
-  [ExerciseType.BENCH_PRESS]: useState<number>(103),
-  [ExerciseType.BACK_SQUAT]: useState<number>(110),
+  [ExerciseType.BENCH_PRESS]: useState<number>(105),
+  [ExerciseType.BACK_SQUAT]: useState<number>(120),
   [ExerciseType.WEIGHTED_PULLUPS]: useState<number>(116),
   [ExerciseType.DL]: useState<number>(150),
   [ExerciseType.OHP]: useState<number>(70),
