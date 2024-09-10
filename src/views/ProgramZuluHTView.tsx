@@ -98,8 +98,8 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
-          ["3x10", (wpu * 0.65).toFixed(1)],
-        ], progressionType: ProgressionType.KG
+          ["3x12", "12"],
+        ], progressionType: ProgressionType.REPS
       },
     ],
     [
@@ -132,8 +132,8 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
-          ["3x10", (wpu * 0.65).toFixed(1)],
-        ], progressionType: ProgressionType.KG
+          ["3x12", "12"],
+        ], progressionType: ProgressionType.REPS
       },
     ],
     [
@@ -169,8 +169,8 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
-          ["3x8", (wpu * 0.70).toFixed(1)],
-        ], progressionType: ProgressionType.KG
+          ["3x12", "10"],
+        ], progressionType: ProgressionType.REPS
       },
     ],
     [
@@ -203,8 +203,8 @@ export default function ProgramZuluHTView() {
       },
       {
         name: toName(ExerciseType.WEIGHTED_PULLUPS), sets: [
-          ["3x8", (wpu * 0.70).toFixed(1)],
-        ], progressionType: ProgressionType.KG
+          ["3x12", "10"],
+        ], progressionType: ProgressionType.REPS
       },
     ],
     [
