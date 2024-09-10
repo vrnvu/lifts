@@ -11,7 +11,6 @@ export default function ProgramZuluHTView() {
   const backSquat = getWeightTm(userConfig, ExerciseType.BACK_SQUAT);
   const dl = getWeightTm(userConfig, ExerciseType.DL);
   const ohp = getWeightTm(userConfig, ExerciseType.OHP);
-  const wpu = getWeightTm(userConfig, ExerciseType.WEIGHTED_PULLUPS);
 
   const week1: StrengthFlexExercise[][] = [
     [
